@@ -40,8 +40,8 @@
                     "en": "Choose a path for Castopod",
                     "fr": "Choisissez un chemin pour Castopod"
                 },
-                "example": "/castopod",
-                "default": "/castopod"
+                "example": "/",
+                "default": "/"
             },
             {
                 "name": "is_public",
