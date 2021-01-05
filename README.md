@@ -19,10 +19,11 @@ Castopod Server is an open-source hosting platform made for podcasters who want 
 
 ## Demo
 
-* [Official demo](Link to a demo site for this app.)
+ * [podcast.podlibre.org](https://podcast.podlibre.org/@podlibre_fr)
 
 ## Configuration
 
+ * How to configure this app: From an admin panel.
 
 ## Documentation
 
@@ -48,9 +49,6 @@ Can the app be used by multiple users?
 ## Additional information
 
 * Other info you would like to add about this app.
-
-**More info on the documentation page:**  
-https://yunohost.org/packaging_apps
 
 ## Links
 
