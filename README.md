@@ -51,9 +51,6 @@ Castopod Server is an open-source hosting platform made for podcasters who want 
 
 * Other info you would like to add about this app.
 
-**More info on the documentation page:**  
-https://yunohost.org/packaging_apps
-
 ## Links
 
  * Report a bug: https://github.com/YunoHost-Apps/castopod_ynh/issues
