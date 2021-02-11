@@ -16,6 +16,7 @@
 		setup_private=1
 		setup_public=1
 		upgrade=1
+		upgrade=1	from_commit=d511db842c4f1c3c6043ab9293d7f4eddcd9c379
 		backup_restore=1
 		multi_instance=1
 		port_already_use=0
@@ -24,6 +25,6 @@
 Email=
 Notification=none
 ;;; Upgrade options
-	; commit=CommitHash
+	; commit=d511db842c4f1c3c6043ab9293d7f4eddcd9c379
 		name=Name and date of the commit.
 		manifest_arg=domain=DOMAIN&path=PATH&is_public=1&
