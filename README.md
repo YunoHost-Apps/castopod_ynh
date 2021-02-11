@@ -45,7 +45,7 @@ Castopod Server is an open-source hosting platform made for podcasters who want 
 
 ## Limitations
 
-* Any known limitations.
+* :warning: Installation possible only on a root domain or subdomain.
 
 ## Additional information
 

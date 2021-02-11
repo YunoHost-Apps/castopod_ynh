@@ -45,7 +45,7 @@ Castopod Server est une plate-forme d'hébergement open source conçue pour les 
 
 ## Limitations
 
-* Limitations connues.
+* :warning: Installation possible uniquement sur un domaine racine ou sous-domaine.
 
 ## Informations additionnelles
 
