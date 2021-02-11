@@ -27,4 +27,3 @@ Notification=none
 	; commit=CommitHash
 		name=Name and date of the commit.
 		manifest_arg=domain=DOMAIN&path=PATH&is_public=1&
-
