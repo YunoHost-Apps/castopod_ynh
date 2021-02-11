@@ -1,17 +1,17 @@
 # Castopod for YunoHost
 
 [![Integration level](https://dash.yunohost.org/integration/castopod.svg)](https://dash.yunohost.org/appci/app/castopod) ![](https://ci-apps.yunohost.org/ci/badges/castopod.status.svg) ![](https://ci-apps.yunohost.org/ci/badges/castopod.maintain.svg)  
-[![Install castopod with YunoHost](https://install-app.yunohost.org/install-with-yunohost.svg)](https://install-app.yunohost.org/?app=castopod)
+[![Install Castopod with YunoHost](https://install-app.yunohost.org/install-with-yunohost.svg)](https://install-app.yunohost.org/?app=castopod)
 
 *[Lire ce readme en français.](./README_fr.md)*
 
-> *This package allows you to install castopod quickly and simply on a YunoHost server.  
+> *This package allows you to install Castopod quickly and simply on a YunoHost server.  
 If you don't have YunoHost, please consult [the guide](https://yunohost.org/#/install) to learn how to install it.*
 
 ## Overview
 Castopod Server is an open-source hosting platform made for podcasters who want engage and interact with their audience. Please note that Castopod is still under heavy development: it may not be 100% stable and some features are still being developed.
 
-**Shipped version:** 1.0.0 alpha 33
+**Shipped version:** 1.0.0 alpha.33
 
 ## Screenshots
 
@@ -23,19 +23,20 @@ Castopod Server is an open-source hosting platform made for podcasters who want 
 
 ## Configuration
 
- * How to configure this app: From an admin panel.
+ * Go to `domain.ltd/cp-install` to creat an admin user.
+ * How to configure this app: From an admin panel `domain.ltd/cp-admin`.
 
 ## Documentation
 
- * Official documentation: Link to the official documentation of this app
+ * Documentation: https://podlibre.org/create-a-podcast-in-3mn-with-castopod/
  * YunoHost documentation: If specific documentation is needed, feel free to contribute.
 
 ## YunoHost specific features
 
 #### Multi-user support
 
-Are LDAP and HTTP auth supported?
-Can the app be used by multiple users?
+ * Are LDAP and HTTP auth supported?
+ * Can the app be used by multiple users?
 
 #### Supported architectures
 
@@ -44,7 +45,7 @@ Can the app be used by multiple users?
 
 ## Limitations
 
-* Any known limitations.
+* :warning: Installation possible only on a root domain or subdomain.
 
 ## Additional information
 
