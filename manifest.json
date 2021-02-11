@@ -38,6 +38,16 @@
                 "example": "podcast.example.com"
             },
             {
+                "name": "path",
+                "type": "path",
+                "ask": {
+                    "en": "Choose a path for Castopod",
+                    "fr": "Choisissez un chemin pour Castopod"
+                },
+                "example": "/castopod",
+                "default": "/castopod"
+            },
+            {
                 "name": "is_public",
                 "type": "boolean",
                 "ask": {
