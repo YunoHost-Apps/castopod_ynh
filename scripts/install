@@ -99,10 +99,6 @@ ynh_script_progression --message="Configuring Castopod..." --weight=1
 
 ynh_add_config --template="../conf/.env.example" --destination="$final_path/.env"
 
-#=================================================
-# STORE THE CONFIG FILE CHECKSUM
-#=================================================
-
 # Recalculate and store the config file checksum into the app settings
 ynh_store_file_checksum --file="$final_path/.env"
 
