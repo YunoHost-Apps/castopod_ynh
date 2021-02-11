@@ -10,11 +10,11 @@
     "url": "https://podlibre.org/",
     "license": "GPL-3.0-only",
     "maintainer": {
-        "name": "",
+        "name": "eric_G",
         "email": ""
     },
     "requirements": {
-        "yunohost": ">= 3.8.1"
+        "yunohost": ">= 4.0.0"
     },
     "multi_instance": true,
     "services": [
