@@ -44,7 +44,6 @@ ynh_script_progression --message="Storing installation settings..." --weight=1
 
 ynh_app_setting_set --app=$app --key=domain --value=$domain
 ynh_app_setting_set --app=$app --key=path --value=$path_url
-ynh_app_setting_set --app=$app --key=is_public --value=$is_public
 
 #=================================================
 # CREATE A MYSQL DATABASE
@@ -97,17 +96,7 @@ phpversion=$(ynh_app_setting_get --app=$app --key=phpversion)
 #=================================================
 ynh_script_progression --message="Configuring Castopod..." --weight=1
 
-cp ../conf/.env.example "$final_path/.env"
-
-# Change variables in Castopod configuration
-ynh_replace_string --match_string="__DBNAME__" --replace_string="$db_name" --target_file="$final_path/.env"
-ynh_replace_string --match_string="__DBPWD__" --replace_string="$db_pwd" --target_file="$final_path/.env"
-ynh_replace_string --match_string="__DOMAIN__" --replace_string="https://$domain" --target_file="$final_path/.env"
-ynh_replace_string --match_string="__DOMAINPATH__" --replace_string="https://$domain$path_url" --target_file="$final_path/.env"
-
-#=================================================
-# STORE THE CONFIG FILE CHECKSUM
-#=================================================
+ynh_add_config --template="../conf/.env.example" --destination="$final_path/.env"
 
 # Recalculate and store the config file checksum into the app settings
 ynh_store_file_checksum --file="$final_path/.env"
@@ -125,12 +114,12 @@ chmod -R 755 $final_path
 #=================================================
 # SETUP SSOWAT
 #=================================================
-ynh_script_progression --message="Configuring SSOwat..." --weight=10
+ynh_script_progression --message="Configuring permissions..." --weight=10
 
 # Make app public if necessary or protect it
 if [ $is_public -eq 1 ]
 then
-	ynh_permission_update --permission "main" --add "visitors"
+	ynh_permission_update --permission="main" --add="visitors"
 fi
 
 #=================================================
