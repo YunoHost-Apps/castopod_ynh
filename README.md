@@ -11,7 +11,7 @@ If you don't have YunoHost, please consult [the guide](https://yunohost.org/#/in
 ## Overview
 Castopod Server is an open-source hosting platform made for podcasters who want engage and interact with their audience. Please note that Castopod is still under heavy development: it may not be 100% stable and some features are still being developed.
 
-**Shipped version:** 1.0.0 alpha.38
+**Shipped version:** 1.0.0 alpha.39
 
 ## Screenshots
 
