@@ -35,8 +35,8 @@ Castopod Server est une plate-forme d'hébergement open source conçue pour les 
 
 #### Support multi-utilisateur
 
-* L'authentification LDAP et HTTP est-elle prise en charge ?
-* L'application peut-elle être utilisée par plusieurs utilisateurs ?
+* L'authentification LDAP et HTTP est-elle prise en charge ? **Non**
+* L'application peut-elle être utilisée par plusieurs utilisateurs ? **Oui**
 
 #### Architectures supportées
 
