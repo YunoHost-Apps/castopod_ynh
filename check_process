@@ -16,15 +16,15 @@
 		setup_private=1
 		setup_public=1
 		upgrade=1
-		upgrade=1	from_commit=d511db842c4f1c3c6043ab9293d7f4eddcd9c379
+ 		#1.0.0 alpha.40
+		upgrade=1	from_commit=ac00b520875beed49bb138e795562e1f74700ab9
 		backup_restore=1
 		multi_instance=1
-		port_already_use=0
 		change_url=1
 ;;; Options
 Email=
 Notification=none
 ;;; Upgrade options
-	; commit=d511db842c4f1c3c6043ab9293d7f4eddcd9c379
-		name=Name and date of the commit.
+	; commit=ac00b520875beed49bb138e795562e1f74700ab9
+		name=1.0.0 alpha.40
 		manifest_arg=domain=DOMAIN&path=PATH&is_public=1&

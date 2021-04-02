@@ -56,6 +56,14 @@ ynh_app_setting_set --app=$app --key=db_name --value=$db_name
 ynh_mysql_setup_db --db_user=$db_user --db_name=$db_name
 
 #=================================================
+# CREATE DEDICATED USER
+#=================================================
+ynh_script_progression --message="Configuring system user..." --weight=1
+
+# Create a system user
+ynh_system_user_create --username=$app --home_dir=$final_path
+
+#=================================================
 # DOWNLOAD, CHECK AND UNPACK SOURCE
 #=================================================
 ynh_script_progression --message="Setting up source files..." --weight=2
@@ -71,14 +79,6 @@ ynh_script_progression --message="Configuring NGINX web server..." --weight=1
 
 # Create a dedicated NGINX config
 ynh_add_nginx_config
-
-#=================================================
-# CREATE DEDICATED USER
-#=================================================
-ynh_script_progression --message="Configuring system user..." --weight=1
-
-# Create a system user
-ynh_system_user_create --username=$app
 
 #=================================================
 # PHP-FPM CONFIGURATION
@@ -98,9 +98,6 @@ ynh_script_progression --message="Configuring Castopod..." --weight=1
 
 ynh_add_config --template="../conf/.env.example" --destination="$final_path/.env"
 
-# Recalculate and store the config file checksum into the app settings
-ynh_store_file_checksum --file="$final_path/.env"
-
 #=================================================
 # GENERIC FINALIZATION
 #=================================================
@@ -108,8 +105,9 @@ ynh_store_file_checksum --file="$final_path/.env"
 #=================================================
 
 # Set permissions to app files
-chown -R $app: $final_path
-chmod -R 755 $final_path
+chown -R $app:$app $final_path
+#chmod o-rwx $final_path
+chmod 600 $final_path/.env
 
 #=================================================
 # SETUP SSOWAT
