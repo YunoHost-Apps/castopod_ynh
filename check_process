@@ -32,4 +32,3 @@ Notification=none
 	; commit=9c603f6b659e4191028cc909311a0cbde9955155
 		name=1.0.0 alpha.41
 		manifest_arg=domain=DOMAIN&path=PATH&is_public=1&
-	manifest_arg=domain=DOMAIN/cp-install&path=PATH&admin=USER&language=fr&is_public=1&password=pass&port=666&
