@@ -15,7 +15,7 @@ Castopod Server est une plate-forme d'hébergement open source conçue pour les 
 
 ## Captures d'écran
 
-![](https://podlibre.org/content/images/2020/12/Parisian-Podcast.png)
+![](https://podlibre.org/content/images/2021/04/activity-feed.png)
 
 ## Démo
 

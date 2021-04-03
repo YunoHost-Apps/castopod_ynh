@@ -15,7 +15,7 @@ Castopod Server is an open-source hosting platform made for podcasters who want 
 
 ## Screenshots
 
-![](https://podlibre.org/content/images/2020/12/Parisian-Podcast.png)
+![](https://podlibre.org/content/images/2021/04/activity-feed.png)
 
 ## Demo
 
