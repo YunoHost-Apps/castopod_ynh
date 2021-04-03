@@ -113,13 +113,7 @@ ynh_add_config --template="../conf/cron" --destination="/etc/cron.d/$app"
 
 # Set permissions to app files
 chown -R $app:$app $final_path
-#chmod o-rwx $final_path
 chmod 600 $final_path/.env
-
-# chown -R root:root $final_path
-# chmod o-rwx $final_path
-# chown -R www-data:www-data $final_path/writable
-# chown -R www-data:www-data $final_path/public/media
 
 #=================================================
 # SETUP SSOWAT
