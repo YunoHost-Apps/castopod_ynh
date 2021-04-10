@@ -40,8 +40,8 @@ Castopod Server est une plate-forme d'hébergement open source conçue pour les 
 
 #### Architectures supportées
 
-* x86-64 - [![Build Status](https://ci-apps.yunohost.org/ci/logs/castopod%20%28Apps%29.svg)](https://ci-apps.yunohost.org/ci/apps/castopod/)
-* ARMv8-A - [![Build Status](https://ci-apps-arm.yunohost.org/ci/logs/castopod%20%28Apps%29.svg)](https://ci-apps-arm.yunohost.org/ci/apps/castopod/)
+* x86-64 - [![Build Status](https://ci-apps.yunohost.org/ci/logs/castopod.svg)](https://ci-apps.yunohost.org/ci/apps/castopod/)
+* ARMv8-A - [![Build Status](https://ci-apps-arm.yunohost.org/ci/logs/castopod.svg)](https://ci-apps-arm.yunohost.org/ci/apps/castopod/)
 
 ## Limitations
 
