@@ -6,7 +6,7 @@
 ;; Test complet
 	; Manifest
 		domain="domain.tld"	(DOMAIN)
-		path="/"	(PATH)
+		path="/cp-install"	(PATH)
 		is_public=1	(PUBLIC|public=1|private=0)
 	; Checks
 		pkg_linter=1
