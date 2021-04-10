@@ -15,7 +15,7 @@ Castopod Server is an open-source hosting platform made for podcasters who want 
 
 ## Screenshots
 
-![](https://podlibre.org/content/images/2020/12/Parisian-Podcast.png)
+![](https://podlibre.org/content/images/2021/04/activity-feed.png)
 
 ## Demo
 
@@ -23,7 +23,7 @@ Castopod Server is an open-source hosting platform made for podcasters who want 
 
 ## Configuration
 
- * Go to `domain.ltd/cp-install` to creat an admin user.
+ * Go to `domain.ltd/cp-install` to finish installation and create an admin user.
  * How to configure this app: From an admin panel `domain.ltd/cp-admin`.
 
 ## Documentation
