@@ -34,6 +34,11 @@
                 "example": "podcast.example.com"
             },
             {
+                "name": "admin",
+                "type": "user",
+                "example": "johndoe"
+            },
+            {
                 "name": "is_public",
                 "type": "boolean",
                 "help": {
@@ -41,6 +46,15 @@
                     "fr": "Si cette case est cochée, Castopod sera accessible aux personnes n’ayant pas de compte. Vous pourrez changer ceci plus tard via la webadmin."
                 },
                 "default": true
+            },
+            {
+                "name": "password",
+                "type": "password",
+                "help": {
+                    "en": "Use the help field to add an information for the admin about this question.",
+                    "fr": "Utilisez le champ aide pour ajouter une information à l'intention de l'administrateur à propos de cette question."
+                },
+                "example": "Choose a password"
             }
         ]
     }
