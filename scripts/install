@@ -118,11 +118,14 @@ ynh_script_progression --message="Configuring SSOwat..." --weight=1
 # Making the app public for curl
 ynh_permission_update --permission="main" --add="visitors"
 
-installUrl="/cp-install"
+# Reload NGINX
+ynh_systemd_action --service_name=nginx --action=reload
 
 # Installation with curl
 ynh_script_progression --message="Finalizing installation..." --weight=1
-ynh_local_curl $installUrl "email=$email" "username=$admin" "password=$password"
+ynh_local_curl "/cp-install" "email=$email" "username=$admin" "password=$password"
+
+ynh_permission_update --permission="main" --remove="visitors"
 
 #=================================================
 # GENERIC FINALIZATION
@@ -142,7 +145,7 @@ ynh_script_progression --message="Configuring permissions..." --weight=10
 # Make app public if necessary or protect it
 if [ $is_public -eq 1 ]
 then
-	ynh_permission_update --permission="main" --remove="visitors"
+	ynh_permission_update --permission="main" --add="visitors"
 fi
 
 #=================================================
