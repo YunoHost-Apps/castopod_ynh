@@ -123,7 +123,7 @@ ynh_systemd_action --service_name=nginx --action=reload
 
 # Installation with curl
 ynh_script_progression --message="Finalizing installation..." --weight=1
-ynh_local_curl "/cp-install" "csrf_test_name=7b748827ae56137fb7c8abd7f7e4ea00" "email=$email" "username=$admin" "password=$password"
+ynh_local_curl "/cp-install" "email=$email" "username=$admin" "password=$password"
 
 ynh_permission_update --permission="main" --remove="visitors"
 
