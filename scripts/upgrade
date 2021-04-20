@@ -20,6 +20,7 @@ domain=$(ynh_app_setting_get --app=$app --key=domain)
 path_url=$(ynh_app_setting_get --app=$app --key=path)
 final_path=$(ynh_app_setting_get --app=$app --key=final_path)
 db_name=$(ynh_app_setting_get --app=$app --key=db_name)
+db_pwd=$(ynh_app_setting_get --app=$app --key=mysqlpwd)
 
 #=================================================
 # CHECK VERSION
@@ -100,6 +101,13 @@ ynh_script_progression --message="Upgrading PHP-FPM configuration..." --weight=2
 
 # Create a dedicated PHP-FPM config
 ynh_add_fpm_config --package="$extra_php_dependencies"
+
+#=================================================
+# CONFIGURE CASTOPOD
+#=================================================
+ynh_script_progression --message="Configuring Castopod..." --weight=1
+
+ynh_add_config --template="../conf/.env.example" --destination="$final_path/.env"
 
 #=================================================
 # SETUP CRON
