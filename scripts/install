@@ -139,9 +139,10 @@ ynh_permission_update --permission="main" --remove="visitors"
 
 # Set permissions to app files
 chown -R $app:root $final_path
+chmod -R o-rwx $final_path
 chown -R www-data:www-data $final_path/writable
 chown -R www-data:www-data $final_path/public/media
-#chmod 600 $final_path/.env
+chmod 600 $final_path/.env
 
 #=================================================
 # SETUP SSOWAT
