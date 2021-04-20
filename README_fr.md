@@ -23,8 +23,7 @@ Castopod Server est une plate-forme d'hébergement open source conçue pour les 
 
 ## Configuration
 
- * Allez dans `domain.ltd/cp-install` pour finir l'installation et créer un utilisateur administrateur.
- * Comment configurer cette application : via le panneau d'administration `domain.ltd/cp-admin`.
+ * Comment configurer cette application : via `domain.ltd/cp-admin` pour avoir accès à la page d'administration.
 
 ## Documentation
 

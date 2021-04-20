@@ -23,8 +23,7 @@ Castopod Server is an open-source hosting platform made for podcasters who want 
 
 ## Configuration
 
- * Go to `domain.ltd/cp-install` to finish installation and create an admin user.
- * How to configure this app: From an admin panel `domain.ltd/cp-admin`.
+ * How to configure this app: Go to `domain.ltd/cp-admin` to connect to the administration panel.
 
 ## Documentation
 
