@@ -102,6 +102,13 @@ ynh_script_progression --message="Upgrading PHP-FPM configuration..." --weight=2
 ynh_add_fpm_config --package="$extra_php_dependencies"
 
 #=================================================
+# SETUP CRON
+#=================================================
+ynh_script_progression --message="Setuping cron..."
+
+ynh_add_config --template="../conf/cron" --destination="/etc/cron.d/$app"
+
+#=================================================
 # GENERIC FINALIZATION
 #=================================================
 # SECURE FILES AND DIRECTORIES
