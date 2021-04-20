@@ -25,7 +25,6 @@ path_url="/"
 is_public=$YNH_APP_ARG_IS_PUBLIC
 admin=$YNH_APP_ARG_ADMIN
 password=$YNH_APP_ARG_PASSWORD
-email=$(ynh_user_get_info --username=$admin --key=mail)
 
 app=$YNH_APP_INSTANCE_NAME
 
@@ -123,6 +122,8 @@ ynh_systemd_action --service_name=nginx --action=reload
 
 # Installation with curl
 ynh_script_progression --message="Finalizing installation..." --weight=1
+
+email=$(ynh_user_get_info --username=$admin --key=mail)
 
 ynh_local_curl "/cp-install"
 
