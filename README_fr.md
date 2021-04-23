@@ -54,7 +54,7 @@ Castopod Server est une plate-forme d'hébergement open source conçue pour les 
 
  * Signaler un bug : https://github.com/YunoHost-Apps/castopod_ynh/issues
  * Site de l'application : https://podlibre.org/
- * Dépôt de l'application principale : https://code.podlibre.org/podlibre/castopod
+ * Dépôt de l'application principale : https://code.podlibre.org/podlibre/castopod-host
  * Site web YunoHost : https://yunohost.org/
 
 ---
