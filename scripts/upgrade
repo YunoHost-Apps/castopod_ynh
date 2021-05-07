@@ -82,25 +82,10 @@ if [ "$upgrade_type" == "UPGRADE_APP" ]
 then
 	ynh_script_progression --message="Upgrading source files..." --weight=1
 
-		# Create a temporary directory
-		tmpdir="$(mktemp -d)"
-
-		# Backup the config file in the temp dir
-		cp -a "$final_path/public" "$tmpdir/public"
-		cp -a "$final_path/writable" "$tmpdir/writable"
-
-		# Remove the app directory securely
-		ynh_secure_remove --file="$final_path"
-
-		# Download, check integrity, uncompress and patch the source from app.src
-		ynh_setup_source --dest_dir="$final_path"
-
-		# Copy the admin saved settings from tmp directory to final path	
-		cp -a "$tmpdir/public" "$final_path/public"
-		cp -a "$tmpdir/writable" "$final_path/writable" 
-
-		# Remove the tmp directory securely
-		ynh_secure_remove --file="$tmpdir"
+	ynh_secure_remove --file="$final_path/app"
+	ynh_secure_remove --file="$final_path/public/assets"
+	# Download, check integrity, uncompress and patch the source from app.src
+	ynh_setup_source --dest_dir="$final_path"
 fi
 
 #=================================================
@@ -140,10 +125,8 @@ ynh_add_config --template="../conf/cron" --destination="/etc/cron.d/$app"
 #=================================================
 
 # Set permissions to app files
-chown -R $app:root $final_path
-chown -R www-data:www-data $final_path/writable
-chown -R www-data:www-data $final_path/public/media
-#chmod 600 $final_path/.env
+chown -R $app: $final_path
+chmod 600 $final_path/.env
 
 #=================================================
 # RELOAD NGINX
