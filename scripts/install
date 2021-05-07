@@ -23,6 +23,9 @@ ynh_abort_if_errors
 domain=$YNH_APP_ARG_DOMAIN
 path_url="/"
 is_public=$YNH_APP_ARG_IS_PUBLIC
+admin=$YNH_APP_ARG_ADMIN
+password=$YNH_APP_ARG_PASSWORD
+email=$(ynh_user_get_info --username=$admin --key=mail)
 
 app=$YNH_APP_INSTANCE_NAME
 
@@ -44,6 +47,7 @@ ynh_script_progression --message="Storing installation settings..." --weight=1
 
 ynh_app_setting_set --app=$app --key=domain --value=$domain
 ynh_app_setting_set --app=$app --key=path --value=$path_url
+ynh_app_setting_set --app=$app --key=admin --value=$admin
 
 #=================================================
 # CREATE A MYSQL DATABASE
@@ -99,14 +103,41 @@ ynh_script_progression --message="Configuring Castopod..." --weight=1
 ynh_add_config --template="../conf/.env.example" --destination="$final_path/.env"
 
 #=================================================
+# SETUP A CRON
+#=================================================
+ynh_script_progression --message="Setuping a cron..."
+
+ynh_add_config --template="../conf/cron" --destination="/etc/cron.d/$app"
+
+#=================================================
+# SETUP APPLICATION WITH CURL
+#=================================================
+
+# Set the app as temporarily public for curl call
+ynh_script_progression --message="Configuring SSOwat..." --weight=1
+# Making the app public for curl
+ynh_permission_update --permission="main" --add="visitors"
+
+# Reload NGINX
+ynh_systemd_action --service_name=nginx --action=reload
+
+# Installation with curl
+ynh_script_progression --message="Finalizing installation..." --weight=1
+
+ynh_local_curl "/cp-install"
+
+ynh_local_curl "/cp-install/create-superadmin" "email=$email" "username=$admin" "password=$password"
+
+ynh_permission_update --permission="main" --remove="visitors"
+
+#=================================================
 # GENERIC FINALIZATION
 #=================================================
 # SECURE FILES AND DIRECTORIES
 #=================================================
 
 # Set permissions to app files
-chown -R $app:$app $final_path
-#chmod o-rwx $final_path
+chown -R $app: $final_path
 chmod 600 $final_path/.env
 
 #=================================================

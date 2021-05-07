@@ -20,6 +20,7 @@ domain=$(ynh_app_setting_get --app=$app --key=domain)
 path_url=$(ynh_app_setting_get --app=$app --key=path)
 final_path=$(ynh_app_setting_get --app=$app --key=final_path)
 db_name=$(ynh_app_setting_get --app=$app --key=db_name)
+db_pwd=$(ynh_app_setting_get --app=$app --key=mysqlpwd)
 
 #=================================================
 # CHECK VERSION
@@ -81,6 +82,8 @@ if [ "$upgrade_type" == "UPGRADE_APP" ]
 then
 	ynh_script_progression --message="Upgrading source files..." --weight=1
 
+	ynh_secure_remove --file="$final_path/app"
+	ynh_secure_remove --file="$final_path/public/assets"
 	# Download, check integrity, uncompress and patch the source from app.src
 	ynh_setup_source --dest_dir="$final_path"
 fi
@@ -102,14 +105,27 @@ ynh_script_progression --message="Upgrading PHP-FPM configuration..." --weight=2
 ynh_add_fpm_config --package="$extra_php_dependencies"
 
 #=================================================
+# CONFIGURE CASTOPOD
+#=================================================
+ynh_script_progression --message="Configuring Castopod..." --weight=1
+
+ynh_add_config --template="../conf/.env.example" --destination="$final_path/.env"
+
+#=================================================
+# SETUP CRON
+#=================================================
+ynh_script_progression --message="Setuping cron..."
+
+ynh_add_config --template="../conf/cron" --destination="/etc/cron.d/$app"
+
+#=================================================
 # GENERIC FINALIZATION
 #=================================================
 # SECURE FILES AND DIRECTORIES
 #=================================================
 
 # Set permissions to app files
-chown -R $app:$app $final_path
-#chmod o-rwx $final_path
+chown -R $app: $final_path
 chmod 600 $final_path/.env
 
 #=================================================

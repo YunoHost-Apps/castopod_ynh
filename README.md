@@ -11,11 +11,11 @@ If you don't have YunoHost, please consult [the guide](https://yunohost.org/#/in
 ## Overview
 Castopod Server is an open-source hosting platform made for podcasters who want engage and interact with their audience. Please note that Castopod is still under heavy development: it may not be 100% stable and some features are still being developed.
 
-**Shipped version:** 1.0.0 alpha.41
+**Shipped version:** 1.0.0 alpha.55
 
 ## Screenshots
 
-![](https://podlibre.org/content/images/2020/12/Parisian-Podcast.png)
+![](https://podlibre.org/content/images/2021/04/activity-feed.png)
 
 ## Demo
 
@@ -23,8 +23,7 @@ Castopod Server is an open-source hosting platform made for podcasters who want 
 
 ## Configuration
 
- * Go to `domain.ltd/cp-install` to creat an admin user.
- * How to configure this app: From an admin panel `domain.ltd/cp-admin`.
+ * How to configure this app: Go to `domain.ltd/cp-admin` to connect to the administration panel.
 
 ## Documentation
 
@@ -40,8 +39,8 @@ Castopod Server is an open-source hosting platform made for podcasters who want 
 
 #### Supported architectures
 
-* x86-64 - [![Build Status](https://ci-apps.yunohost.org/ci/logs/castopod%20%28Apps%29.svg)](https://ci-apps.yunohost.org/ci/apps/castopod/)
-* ARMv8-A - [![Build Status](https://ci-apps-arm.yunohost.org/ci/logs/castopod%20%28Apps%29.svg)](https://ci-apps-arm.yunohost.org/ci/apps/castopod/)
+* x86-64 - [![Build Status](https://ci-apps.yunohost.org/ci/logs/castopod.svg)](https://ci-apps.yunohost.org/ci/apps/castopod/)
+* ARMv8-A - [![Build Status](https://ci-apps-arm.yunohost.org/ci/logs/castopod.svg)](https://ci-apps-arm.yunohost.org/ci/apps/castopod/)
 
 ## Limitations
 
@@ -55,7 +54,7 @@ Castopod Server is an open-source hosting platform made for podcasters who want 
 
  * Report a bug: https://github.com/YunoHost-Apps/castopod_ynh/issues
  * App website: https://podlibre.org/
- * Upstream app repository: https://code.podlibre.org/podlibre/castopod
+ * Upstream app repository: https://code.podlibre.org/podlibre/castopod-host
  * YunoHost website: https://yunohost.org/
 
 ---

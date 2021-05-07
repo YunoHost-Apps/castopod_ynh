@@ -6,7 +6,7 @@
         "en": "Hosting platform made for podcasters",
         "fr": "Plateforme d'hébergement conçue pour les podcasteurs"
     },
-    "version": "1.0.0-41~ynh1",
+    "version": "1.0.0-55~ynh1",
     "url": "https://podlibre.org/",
     "license": "GPL-3.0-only",
     "maintainer": {
@@ -34,6 +34,11 @@
                 "example": "podcast.example.com"
             },
             {
+                "name": "admin",
+                "type": "user",
+                "example": "johndoe"
+            },
+            {
                 "name": "is_public",
                 "type": "boolean",
                 "help": {
@@ -41,6 +46,11 @@
                     "fr": "Si cette case est cochée, Castopod sera accessible aux personnes n’ayant pas de compte. Vous pourrez changer ceci plus tard via la webadmin."
                 },
                 "default": true
+            },
+            {
+                "name": "password",
+                "type": "password",
+                "example": "Choose a password"
             }
         ]
     }

@@ -54,6 +54,13 @@ ynh_script_progression --message="Removing PHP-FPM configuration..." --weight=2
 ynh_remove_fpm_config
 
 #=================================================
+# REMOVE VARIOUS FILES
+#=================================================
+
+# Remove a cron file
+ynh_secure_remove --file="/etc/cron.d/$app"
+
+#=================================================
 # GENERIC FINALIZATION
 #=================================================
 # REMOVE DEDICATED USER
