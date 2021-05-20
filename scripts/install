@@ -111,6 +111,7 @@ phpversion=$(ynh_app_setting_get --app=$app --key=phpversion)
 #=================================================
 ynh_script_progression --message="Configuring Castopod..." --weight=1
 
+redis_number=$(shuf -i 0-15 -n 1)
 ynh_add_config --template="../conf/.env.example" --destination="$final_path/.env"
 chmod 600 $final_path/.env
 chown $app:www-data "$final_path/.env"
