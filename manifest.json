@@ -8,6 +8,14 @@
     },
     "version": "1.0.0-57~ynh2",
     "url": "https://podlibre.org/",
+    "upstream": {
+        "license": "GPL-3.0-only",
+        "website": "https://podlibre.org/",
+        "demo": "https://podcast.podlibre.org/@podlibre_fr",
+        "admindoc": "https://podlibre.org/create-a-podcast-in-3mn-with-castopod/",
+        "userdoc": "https://yunohost.org/apps",
+        "code": "https://code.podlibre.org/podlibre/castopod-host"
+    },
     "license": "GPL-3.0-only",
     "maintainer": {
         "name": "eric_G",
