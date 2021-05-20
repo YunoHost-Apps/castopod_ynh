@@ -88,6 +88,10 @@ then
 	ynh_setup_source --dest_dir="$final_path"
 fi
 
+chmod 750 "$final_path"
+chmod -R o-rwx "$final_path"
+chown -R $app:www-data "$final_path"
+
 #=================================================
 # NGINX CONFIGURATION
 #=================================================
@@ -95,6 +99,13 @@ ynh_script_progression --message="Upgrading NGINX web server configuration..." -
 
 # Create a dedicated NGINX config
 ynh_add_nginx_config
+
+#=================================================
+# UPGRADE DEPENDENCIES
+#=================================================
+ynh_script_progression --message="Upgrading dependencies..." --weight=1
+
+ynh_install_app_dependencies $pkg_dependencies
 
 #=================================================
 # PHP-FPM CONFIGURATION
@@ -110,6 +121,8 @@ ynh_add_fpm_config --package="$extra_php_dependencies"
 ynh_script_progression --message="Configuring Castopod..." --weight=1
 
 ynh_add_config --template="../conf/.env.example" --destination="$final_path/.env"
+chmod 600 $final_path/.env
+chown $app:www-data "$final_path/.env"
 
 #=================================================
 # SETUP CRON
@@ -117,16 +130,6 @@ ynh_add_config --template="../conf/.env.example" --destination="$final_path/.env
 ynh_script_progression --message="Setuping cron..."
 
 ynh_add_config --template="../conf/cron" --destination="/etc/cron.d/$app"
-
-#=================================================
-# GENERIC FINALIZATION
-#=================================================
-# SECURE FILES AND DIRECTORIES
-#=================================================
-
-# Set permissions to app files
-chown -R $app: $final_path
-chmod 600 $final_path/.env
 
 #=================================================
 # RELOAD NGINX

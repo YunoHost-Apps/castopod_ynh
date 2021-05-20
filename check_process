@@ -1,14 +1,9 @@
-# See here for more information
-# https://github.com/YunoHost/package_check#syntax-check_process-file
-
-# Move this file from check_process.default to check_process when you have filled it.
-
 ;; Test complet
 	; Manifest
-		domain="domain.tld"	(DOMAIN)
-		path="/path"	(PATH)
-		is_public=1	(PUBLIC|public=1|private=0)
-		admin="john"	(USER)
+		domain="domain.tld"
+		path="/path"
+		is_public=1
+		admin="john"
 		password="pass"
 	; Checks
 		pkg_linter=1

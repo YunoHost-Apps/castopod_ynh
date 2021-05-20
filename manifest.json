@@ -6,7 +6,7 @@
         "en": "Hosting platform made for podcasters",
         "fr": "Plateforme d'hébergement conçue pour les podcasteurs"
     },
-    "version": "1.0.0-57~ynh1",
+    "version": "1.0.0-57~ynh2",
     "url": "https://podlibre.org/",
     "license": "GPL-3.0-only",
     "maintainer": {
@@ -14,7 +14,7 @@
         "email": ""
     },
     "requirements": {
-        "yunohost": ">= 4.1.7"
+        "yunohost": ">= 4.2.4"
     },
     "multi_instance": true,
     "services": [
