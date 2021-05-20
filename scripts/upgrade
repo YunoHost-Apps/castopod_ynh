@@ -120,6 +120,7 @@ ynh_add_fpm_config --package="$extra_php_dependencies"
 #=================================================
 ynh_script_progression --message="Configuring Castopod..." --weight=1
 
+redis_number=$(( $YNH_APP_INSTANCE_NUMBER - 1 ))
 ynh_add_config --template="../conf/.env.example" --destination="$final_path/.env"
 chmod 600 $final_path/.env
 chown $app:www-data "$final_path/.env"
