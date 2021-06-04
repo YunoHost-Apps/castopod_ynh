@@ -3,61 +3,43 @@
 [![Niveau d'intégration](https://dash.yunohost.org/integration/castopod.svg)](https://dash.yunohost.org/appci/app/castopod) ![](https://ci-apps.yunohost.org/ci/badges/castopod.status.svg) ![](https://ci-apps.yunohost.org/ci/badges/castopod.maintain.svg)  
 [![Installer Castopod avec YunoHost](https://install-app.yunohost.org/install-with-yunohost.svg)](https://install-app.yunohost.org/?app=castopod)
 
-*[Read this readme in english.](./README.md)* 
+*[Read this readme in english.](./README.md)*
+*[Lire ce readme en français.](./README_fr.md)*
 
-> *Ce package vous permet d'installer Castopod rapidement et simplement sur un serveur YunoHost.  
-Si vous n'avez pas YunoHost, consultez [le guide](https://yunohost.org/#/install) pour apprendre comment l'installer.*
+> *Ce package vous permet d'installer Castopod rapidement et simplement sur un serveur YunoHost.
+Si vous n'avez pas YunoHost, regardez [ici](https://yunohost.org/#/install) pour savoir comment l'installer et en profiter.*
 
 ## Vue d'ensemble
-Castopod Server est une plate-forme d'hébergement open source conçue pour les podcasteurs qui souhaitent s'engager et interagir avec leur public. Veuillez noter que Castopod est toujours en développement: il n'est peut-être pas stable à 100% et certaines fonctionnalités sont encore en développement.
 
-**Version incluse :** 1.0.0 alpha.57
+Plateforme d'hébergement conçue pour les podcasteurs
 
-## Captures d'écran
+**Version incluse :** 1.0.0-57~ynh2
 
-![](https://podlibre.org/content/images/2021/04/activity-feed.png)
+**Démo :** https://podcast.podlibre.org/@podlibre_fr
 
-## Démo
-
- * [podcast.podlibre.org](https://podcast.podlibre.org/@podlibre_fr)
+## Avertissements / informations importantes
 
 ## Configuration
 
- * Comment configurer cette application : via `domain.ltd/cp-admin` pour avoir accès à la page d'administration.
+ * How to configure this app: Go to `domain.ltd/cp-admin` to connect to the administration panel.
 
-## Documentation
+#### Multi-user support
 
- * Documentation : https://podlibre.org/create-a-podcast-in-3mn-with-castopod/
- * Documentation YunoHost : Si une documentation spécifique est nécessaire, n'hésitez pas à contribuer.
-
-## Caractéristiques spécifiques YunoHost
-
-#### Support multi-utilisateur
-
-* L'authentification LDAP et HTTP est-elle prise en charge ? **Non**
-* L'application peut-elle être utilisée par plusieurs utilisateurs ? **Oui**
-
-#### Architectures supportées
-
-* x86-64 - [![Build Status](https://ci-apps.yunohost.org/ci/logs/castopod.svg)](https://ci-apps.yunohost.org/ci/apps/castopod/)
-* ARMv8-A - [![Build Status](https://ci-apps-arm.yunohost.org/ci/logs/castopod.svg)](https://ci-apps-arm.yunohost.org/ci/apps/castopod/)
+ * Are LDAP and HTTP auth supported? **No**
+ * Can the app be used by multiple users? **Yes**
 
 ## Limitations
 
-* :warning: Installation possible uniquement sur un domaine racine ou sous-domaine.
+* :warning: Installation possible only on a root domain or subdomain.
 
-## Informations additionnelles
+## Documentations et ressources
 
-* Autres informations que vous souhaitez ajouter sur cette application.
-
-## Liens
-
- * Signaler un bug : https://github.com/YunoHost-Apps/castopod_ynh/issues
- * Site de l'application : https://podlibre.org/
- * Dépôt de l'application principale : https://code.podlibre.org/podlibre/castopod-host
- * Site web YunoHost : https://yunohost.org/
-
----
+* Site officiel de l'app : https://podlibre.org/
+* Documentation officielle utilisateur : https://yunohost.org/apps
+* Documentation officielle de l'admin : https://podlibre.org/create-a-podcast-in-3mn-with-castopod/
+* Dépôt de code officiel de l'app : https://code.podlibre.org/podlibre/castopod-host
+* Documentation YunoHost pour cette app : https://yunohost.org/app_castopod
+* Signaler un bug : https://github.com/YunoHost-Apps/castopod_ynh/issues
 
 ## Informations pour les développeurs
 
@@ -69,3 +51,5 @@ sudo yunohost app install https://github.com/YunoHost-Apps/castopod_ynh/tree/tes
 ou
 sudo yunohost app upgrade castopod -u https://github.com/YunoHost-Apps/castopod_ynh/tree/testing --debug
 ```
+
+**Plus d'infos sur le packaging d'applications :** https://yunohost.org/packaging_apps
