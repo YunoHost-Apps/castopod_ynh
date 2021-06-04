@@ -1,12 +1,12 @@
 ## Configuration
 
- * How to configure this app: Go to `domain.ltd/cp-admin` to connect to the administration panel.
+  * Comment configurer cette application : Accédez à `domain.ltd/cp-admin` pour vous connecter au panneau d'administration.
 
-#### Multi-user support
+#### Prise en charge multi-utilisateurs
 
- * Are LDAP and HTTP auth supported? **No**
- * Can the app be used by multiple users? **Yes**
+  * Les authentifications LDAP et HTTP sont-elles prises en charge ? **Non**
+  * L'application peut-elle être utilisée par plusieurs utilisateurs ? **Oui**
 
-## Limitations
+## Limites
 
-* :warning: Installation possible only on a root domain or subdomain.
+* :warning : Installation possible uniquement sur un domaine racine ou un sous-domaine. 
