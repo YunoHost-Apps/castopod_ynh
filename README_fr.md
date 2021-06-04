@@ -17,6 +17,10 @@ Plateforme d'hébergement conçue pour les podcasteurs
 
 **Démo :** https://podcast.podlibre.org/@podlibre_fr
 
+## Captures d'écran
+
+![](./doc/screenshots/activity-feed.png)
+
 ## Avertissements / informations importantes
 
 ## Configuration
