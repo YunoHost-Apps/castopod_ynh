@@ -21,6 +21,10 @@ Hosting platform made for podcasters
 
 **Demo:** https://podcast.podlibre.org/@podlibre_fr
 
+## Screenshots
+
+![](./doc/screenshots/activity-feed.png)
+
 ## Disclaimers / important information
 
 ## Configuration
