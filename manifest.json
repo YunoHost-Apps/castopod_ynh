@@ -13,7 +13,6 @@
         "website": "https://podlibre.org/",
         "demo": "https://podcast.podlibre.org/@podlibre_fr",
         "admindoc": "https://podlibre.org/create-a-podcast-in-3mn-with-castopod/",
-        "userdoc": "https://yunohost.org/apps",
         "code": "https://code.podlibre.org/podlibre/castopod-host"
     },
     "license": "GPL-3.0-only",
