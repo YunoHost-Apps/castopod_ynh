@@ -97,7 +97,7 @@ chown -R $app:www-data "$final_path"
 # UPGRADE DATABASE
 #=================================================
 
-ynh_mysql_execute_file_as_root --file=./conf/upgrade.sql --database=$db_name
+ynh_mysql_execute_file_as_root --file=../conf/upgrade.sql --database=$db_name
 
 #=================================================
 # NGINX CONFIGURATION
