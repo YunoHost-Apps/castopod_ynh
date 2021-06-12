@@ -75,7 +75,11 @@ chown -R $app:www-data "$final_path"
 # RESTORE THE PHP-FPM CONFIGURATION
 #=================================================
 
-ynh_restore_file --origin_path="/etc/php/$phpversion/fpm/pool.d/$app.conf"
+#ynh_restore_file --origin_path="/etc/php/$phpversion/fpm/pool.d/$app.conf"
+
+
+# Create a dedicated PHP-FPM config
+ynh_add_fpm_config --package="$extra_php_dependencies"
 
 #=================================================
 # REINSTALL DEPENDENCIES
