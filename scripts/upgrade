@@ -94,12 +94,6 @@ chmod -R o-rwx "$final_path"
 chown -R $app:www-data "$final_path"
 
 #=================================================
-# UPGRADE DATABASE
-#=================================================
-
-#ynh_mysql_execute_file_as_root --file=../conf/upgrade.sql --database=$db_name
-
-#=================================================
 # NGINX CONFIGURATION
 #=================================================
 ynh_script_progression --message="Upgrading NGINX web server configuration..." --weight=10
