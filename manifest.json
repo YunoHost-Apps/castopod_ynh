@@ -6,14 +6,13 @@
         "en": "Hosting platform made for podcasters",
         "fr": "Plateforme d'hébergement conçue pour les podcasteurs"
     },
-    "version": "1.0.0-57~ynh2",
+    "version": "1.0.0-60~ynh1",
     "url": "https://podlibre.org/",
     "upstream": {
         "license": "GPL-3.0-only",
         "website": "https://podlibre.org/",
         "demo": "https://podcast.podlibre.org/@podlibre_fr",
         "admindoc": "https://podlibre.org/create-a-podcast-in-3mn-with-castopod/",
-        "userdoc": "https://yunohost.org/apps",
         "code": "https://code.podlibre.org/podlibre/castopod-host"
     },
     "license": "GPL-3.0-only",

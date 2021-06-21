@@ -13,29 +13,32 @@ Si vous n'avez pas YunoHost, regardez [ici](https://yunohost.org/#/install) pour
 
 Plateforme d'hébergement conçue pour les podcasteurs
 
-**Version incluse :** 1.0.0-57~ynh2
+**Version incluse :** 1.0.0-60~ynh1
 
 **Démo :** https://podcast.podlibre.org/@podlibre_fr
+
+## Captures d'écran
+
+![](./doc/screenshots/activity-feed.png)
 
 ## Avertissements / informations importantes
 
 ## Configuration
 
- * How to configure this app: Go to `domain.ltd/cp-admin` to connect to the administration panel.
+  * Comment configurer cette application : Accédez à `domain.ltd/cp-admin` pour vous connecter au panneau d'administration.
 
-#### Multi-user support
+#### Prise en charge multi-utilisateurs
 
- * Are LDAP and HTTP auth supported? **No**
- * Can the app be used by multiple users? **Yes**
+  * Les authentifications LDAP et HTTP sont-elles prises en charge ? **Non**
+  * L'application peut-elle être utilisée par plusieurs utilisateurs ? **Oui**
 
-## Limitations
+## Limites
 
-* :warning: Installation possible only on a root domain or subdomain.
+* :warning : Installation possible uniquement sur un domaine racine ou un sous-domaine. 
 
 ## Documentations et ressources
 
 * Site officiel de l'app : https://podlibre.org/
-* Documentation officielle utilisateur : https://yunohost.org/apps
 * Documentation officielle de l'admin : https://podlibre.org/create-a-podcast-in-3mn-with-castopod/
 * Dépôt de code officiel de l'app : https://code.podlibre.org/podlibre/castopod-host
 * Documentation YunoHost pour cette app : https://yunohost.org/app_castopod

@@ -17,9 +17,13 @@ If you don't have YunoHost, please consult [the guide](https://yunohost.org/#/in
 
 Hosting platform made for podcasters
 
-**Shipped version:** 1.0.0-57~ynh2
+**Shipped version:** 1.0.0-60~ynh1
 
 **Demo:** https://podcast.podlibre.org/@podlibre_fr
+
+## Screenshots
+
+![](./doc/screenshots/activity-feed.png)
 
 ## Disclaimers / important information
 
@@ -39,7 +43,6 @@ Hosting platform made for podcasters
 ## Documentation and resources
 
 * Official app website: https://podlibre.org/
-* Official user documentation: https://yunohost.org/apps
 * Official admin documentation: https://podlibre.org/create-a-podcast-in-3mn-with-castopod/
 * Upstream app code repository: https://code.podlibre.org/podlibre/castopod-host
 * YunoHost documentation for this app: https://yunohost.org/app_castopod
