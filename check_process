@@ -13,8 +13,8 @@
 		setup_private=1
 		setup_public=1
 		upgrade=1
-		#1.0.0 alpha.41
-		upgrade=1	from_commit=63d63028833538443fcfbd0ea2cf0523582fcc24
+		#1.0.0 alpha.64
+		upgrade=1	from_commit=8ae9bec1e274f8764ad0a5db5297542c3274d999
 		backup_restore=1
 		multi_instance=1
 		change_url=1
@@ -22,6 +22,6 @@
 Email=
 Notification=none
 ;;; Upgrade options
-	; commit=63d63028833538443fcfbd0ea2cf0523582fcc24
-		name=Merge pull request #27 from YunoHost-Apps/testing 
+	; commit=8ae9bec1e274f8764ad0a5db5297542c3274d999
+		name=1.0.0 alpha.64
 		manifest_arg=domain=DOMAIN&path=PATH&admin=USER&language=fr&is_public=1&password=pass&
