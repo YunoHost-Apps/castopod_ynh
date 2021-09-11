@@ -38,14 +38,6 @@ ynh_script_progression --message="Removing the Redis database..." --weight=1
 ynh_redis_remove_db "$redis_db"
 
 #=================================================
-# REMOVE DEPENDENCIES
-#=================================================
-ynh_script_progression --message="Removing dependencies..." --weight=1
-
-# Remove metapackage and its dependencies
-ynh_remove_app_dependencies
-
-#=================================================
 # REMOVE APP MAIN DIR
 #=================================================
 ynh_script_progression --message="Removing app main directory..." --weight=2
