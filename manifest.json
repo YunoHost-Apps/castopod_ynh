@@ -6,7 +6,7 @@
         "en": "Hosting platform made for podcasters",
         "fr": "Plateforme d'hébergement conçue pour les podcasteurs"
     },
-    "version": "1.0.0-70~ynh1",
+    "version": "1.0.0-72~ynh1",
     "url": "https://podlibre.org/",
     "upstream": {
         "license": "GPL-3.0-only",
@@ -37,13 +37,11 @@
                  "help": {
                     "en": "Castopod needs to be installed in a dedicated domain or sub-domain.",
                     "fr": "Castopod doit être installé dans un domaine ou sous-domaine dédié."
-                    },
-                "example": "podcast.example.com"
+                    }
             },
             {
                 "name": "admin",
-                "type": "user",
-                "example": "johndoe"
+                "type": "user"
             },
             {
                 "name": "is_public",
@@ -56,8 +54,7 @@
             },
             {
                 "name": "password",
-                "type": "password",
-                "example": "Choose a password"
+                "type": "password"
             }
         ]
     }
