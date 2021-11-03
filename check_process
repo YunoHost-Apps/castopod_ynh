@@ -15,6 +15,8 @@
 		upgrade=1
 		#1.0.0 alpha.64
 		upgrade=1	from_commit=8ae9bec1e274f8764ad0a5db5297542c3274d999
+		#1.0.0 alpha.75
+		upgrade=1	from_commit=c8a5545d2b1d61342d837b7608fdc64a5b71b25b
 		backup_restore=1
 		multi_instance=1
 		change_url=1
@@ -24,4 +26,6 @@ Notification=none
 ;;; Upgrade options
 	; commit=8ae9bec1e274f8764ad0a5db5297542c3274d999
 		name=1.0.0 alpha.64
+		; commit=c8a5545d2b1d61342d837b7608fdc64a5b71b25b
+		name=1.0.0 alpha.75
 		manifest_arg=domain=DOMAIN&path=PATH&admin=USER&language=fr&is_public=1&password=pass&
