@@ -36,8 +36,7 @@ phpversion=$YNH_PHP_VERSION
 #=================================================
 ynh_script_progression --message="Validating restoration parameters..." --weight=1
 
-test ! -d $final_path \
-	|| ynh_die --message="There is already a directory: $final_path "
+test ! -d $final_path || ynh_die --message="There is already a directory: $final_path "
 
 #=================================================
 # STANDARD RESTORATION STEPS
@@ -69,11 +68,17 @@ chown -R $app:www-data "$final_path"
 #=================================================
 # RESTORE THE PHP-FPM CONFIGURATION
 #=================================================
+ynh_script_progression --message="Restoring the PHP-FPM configuration..." --weight=1
 
-#ynh_restore_file --origin_path="/etc/php/$phpversion/fpm/pool.d/$app.conf"
+ynh_restore_file --origin_path="/etc/php/$phpversion/fpm/pool.d/$app.conf"
 
-# Create a dedicated PHP-FPM config
-ynh_add_fpm_config --package="$extra_php_dependencies"
+#=================================================
+# REINSTALL DEPENDENCIES
+#=================================================
+ynh_script_progression --message="Reinstalling dependencies..." --weight=1
+
+# Define and install dependencies
+ynh_install_app_dependencies $pkg_dependencies
 
 #=================================================
 # RESTORE THE MYSQL DATABASE
@@ -87,8 +92,11 @@ ynh_mysql_connect_as --user=$db_user --password=$db_pwd --database=$db_name < ./
 #=================================================
 # RESTORE VARIOUS FILES
 #=================================================
+ynh_script_progression --message="Restoring cron job..." --weight=1
 
 ynh_restore_file --origin_path="/etc/cron.d/$app"
+chown root: "/etc/cron.d/$app"
+chmod 644 "/etc/cron.d/$app"
 
 #=================================================
 # GENERIC FINALIZATION
