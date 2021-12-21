@@ -6,7 +6,7 @@
         "en": "Hosting platform made for podcasters",
         "fr": "Plateforme d'hébergement conçue pour les podcasteurs"
     },
-    "version": "1.0.0-77~ynh2",
+    "version": "1.0.0-79~ynh1",
     "url": "https://podlibre.org/",
     "upstream": {
         "license": "GPL-3.0-only",
