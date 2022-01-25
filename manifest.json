@@ -7,10 +7,10 @@
         "fr": "Plateforme d'hébergement conçue pour les podcasteurs"
     },
     "version": "1.0.0-1~ynh1",
-    "url": "https://podlibre.org/",
+    "url": "https://castopod.org/",
     "upstream": {
         "license": "GPL-3.0-only",
-        "website": "https://podlibre.org/",
+        "website": "https://castopod.org/",
         "demo": "https://podcast.podlibre.org/@podlibre_fr",
         "admindoc": "https://podlibre.org/create-a-podcast-in-3mn-with-castopod/",
         "code": "https://code.podlibre.org/podlibre/castopod-host"
