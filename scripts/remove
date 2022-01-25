@@ -31,14 +31,6 @@ ynh_script_progression --message="Removing the MySQL database..." --weight=1
 ynh_mysql_remove_db --db_user=$db_user --db_name=$db_name
 
 #=================================================
-# REMOVE DEPENDENCIES
-#=================================================
-ynh_script_progression --message="Removing dependencies..." --weight=1
-
-# Remove metapackage and its dependencies
-ynh_remove_app_dependencies
-
-#=================================================
 # REMOVE THE REDIS DATABASE
 #=================================================
 ynh_script_progression --message="Removing the Redis database..." --weight=1
@@ -68,6 +60,14 @@ ynh_script_progression --message="Removing PHP-FPM configuration..." --weight=2
 
 # Remove the dedicated PHP-FPM config
 ynh_remove_fpm_config
+
+#=================================================
+# REMOVE DEPENDENCIES
+#=================================================
+ynh_script_progression --message="Removing dependencies..." --weight=1
+
+# Remove metapackage and its dependencies
+ynh_remove_app_dependencies
 
 #=================================================
 # REMOVE VARIOUS FILES
