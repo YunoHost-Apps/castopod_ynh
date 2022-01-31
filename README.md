@@ -17,7 +17,7 @@ If you don't have YunoHost, please consult [the guide](https://yunohost.org/#/in
 
 Hosting platform made for podcasters
 
-**Shipped version:** 1.0.0-3~ynh1
+**Shipped version:** 1.0.0-5~ynh1
 
 **Demo:** https://podcast.podlibre.org/@podlibre_fr
 
