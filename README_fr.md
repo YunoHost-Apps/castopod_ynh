@@ -13,13 +13,13 @@ Si vous n'avez pas YunoHost, regardez [ici](https://yunohost.org/#/install) pour
 
 Plateforme d'hébergement conçue pour les podcasteurs
 
-**Version incluse :** 1.0.0-1~ynh1
+**Version incluse :** 1.0.0-3~ynh1
 
 **Démo :** https://podcast.podlibre.org/@podlibre_fr
 
 ## Captures d'écran
 
-![](./doc/screenshots/activity-feed.png)
+![](./doc/screenshots/screenshot.png)
 
 ## Avertissements / informations importantes
 
