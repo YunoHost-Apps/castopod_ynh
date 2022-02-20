@@ -1,5 +1,5 @@
-SOURCE_URL=https://code.podlibre.org/podlibre/castopod-host/uploads/5a256a56581413312982beeb36a4654e/castopod-host-1.0.0-beta.7.zip
-SOURCE_SUM=ec25f86d76bfdd58b58e6221ff8cd878cb3309f39749d834f9972f1d2cb954ab
+SOURCE_URL=https://code.podlibre.org/podlibre/castopod-host/uploads/480a03db991976b229ae7bedfc990999/castopod-host-1.0.0-beta.8.zip
+SOURCE_SUM=55150151353d10073e8d04513403d5b8e9ba87b59d1041199127590322453b75
 SOURCE_SUM_PRG=sha256sum
 SOURCE_FORMAT=zip
 SOURCE_IN_SUBDIR=true
