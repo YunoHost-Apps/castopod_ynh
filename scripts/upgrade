@@ -84,6 +84,13 @@ if ynh_legacy_permissions_exists; then
 fi
 
 #=================================================
+# UPGRADE DEPENDENCIES
+#=================================================
+ynh_script_progression --message="Upgrading dependencies..." --weight=1
+
+ynh_install_app_dependencies $pkg_dependencies
+
+#=================================================
 # CREATE DEDICATED USER
 #=================================================
 ynh_script_progression --message="Making sure dedicated system user exists..." --weight=1
@@ -102,7 +109,7 @@ then
 	ynh_secure_remove --file="$final_path/app"
 	ynh_secure_remove --file="$final_path/public/assets"
 	# Download, check integrity, uncompress and patch the source from app.src
-	ynh_setup_source --dest_dir="$final_path"
+	ynh_setup_source --dest_dir="$final_path" --keep="$final_path/.env"
 fi
 
 chmod 750 "$final_path"
@@ -118,13 +125,6 @@ ynh_script_progression --message="Upgrading NGINX web server configuration..." -
 ynh_add_nginx_config
 
 #=================================================
-# UPGRADE DEPENDENCIES
-#=================================================
-ynh_script_progression --message="Upgrading dependencies..." --weight=1
-
-ynh_install_app_dependencies $pkg_dependencies
-
-#=================================================
 # PHP-FPM CONFIGURATION
 #=================================================
 ynh_script_progression --message="Upgrading PHP-FPM configuration..." --weight=2
@@ -135,11 +135,11 @@ ynh_add_fpm_config --phpversion=$phpversion --usage=$fpm_usage --footprint=$fpm_
 #=================================================
 # CONFIGURE CASTOPOD
 #=================================================
-ynh_script_progression --message="Configuring Castopod..." --weight=1
+# ynh_script_progression --message="Configuring Castopod..." --weight=1
 
-ynh_add_config --template="../conf/.env.example" --destination="$final_path/.env"
-chmod 600 $final_path/.env
-chown $app:www-data "$final_path/.env"
+# ynh_add_config --template="../conf/.env.example" --destination="$final_path/.env"
+# chmod 600 $final_path/.env
+# chown $app:www-data "$final_path/.env"
 
 #=================================================
 # SETUP CRON

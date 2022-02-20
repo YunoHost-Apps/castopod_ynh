@@ -13,13 +13,13 @@ Si vous n'avez pas YunoHost, regardez [ici](https://yunohost.org/#/install) pour
 
 Plateforme d'hébergement conçue pour les podcasteurs
 
-**Version incluse :** 1.0.0-80~ynh1
+**Version incluse :** 1.0.0-88~ynh1
 
 **Démo :** https://podcast.podlibre.org/@podlibre_fr
 
 ## Captures d'écran
 
-![](./doc/screenshots/activity-feed.png)
+![](./doc/screenshots/screenshot.png)
 
 ## Avertissements / informations importantes
 
@@ -38,7 +38,7 @@ Plateforme d'hébergement conçue pour les podcasteurs
 
 ## Documentations et ressources
 
-* Site officiel de l'app : https://podlibre.org/
+* Site officiel de l'app : https://castopod.org/
 * Documentation officielle de l'admin : https://podlibre.org/create-a-podcast-in-3mn-with-castopod/
 * Dépôt de code officiel de l'app : https://code.podlibre.org/podlibre/castopod-host
 * Documentation YunoHost pour cette app : https://yunohost.org/app_castopod
