@@ -14,7 +14,7 @@
 		setup_public=1
 		upgrade=1
 		#1.0.0 alpha.80
-		upgrade=1	from_commit=074aac0f8caa4597bdc34c0e9355cf898546f0df
+		#upgrade=1	from_commit=074aac0f8caa4597bdc34c0e9355cf898546f0df
 		backup_restore=1
 		multi_instance=1
 		change_url=1
