@@ -40,7 +40,7 @@ Plateforme d'hébergement conçue pour les podcasteurs
 
 * Site officiel de l'app : https://castopod.org/
 * Documentation officielle de l'admin : https://podlibre.org/create-a-podcast-in-3mn-with-castopod/
-* Dépôt de code officiel de l'app : https://code.podlibre.org/podlibre/castopod-host
+* Dépôt de code officiel de l'app : https://code.castopod.org/adaures/castopod
 * Documentation YunoHost pour cette app : https://yunohost.org/app_castopod
 * Signaler un bug : https://github.com/YunoHost-Apps/castopod_ynh/issues
 
