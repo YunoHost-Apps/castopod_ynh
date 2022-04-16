@@ -1,5 +1,5 @@
-SOURCE_URL=https://code.castopod.org/adaures/castopod/uploads/ee278031a4eb41a31b5a8b4381712de7/castopod-1.0.0-beta.11.zip
-SOURCE_SUM=39530c2edd9b88852b0a660fff8bd37b2d73dff3c849376469f35888f6cb54e4
+SOURCE_URL=https://code.castopod.org/adaures/castopod/uploads/bbae68bba428b50b1e7fdea264791a28/castopod-1.0.0-beta.13.zip
+SOURCE_SUM=7d0f12efdbefbcd68c27d933773679f2767c28a5441393719807942ad4a54860
 SOURCE_SUM_PRG=sha256sum
 SOURCE_FORMAT=zip
 SOURCE_IN_SUBDIR=true
