@@ -62,7 +62,7 @@ Castopod is currently in beta but already quite stable and used by podcasters ar
 ## Documentations et ressources
 
 * Site officiel de l'app : https://castopod.org/
-* Documentation officielle de l'admin : https://podlibre.org/create-a-podcast-in-3mn-with-castopod/
+* Documentation officielle de l'admin : https://docs.castopod.org/
 * Dépôt de code officiel de l'app : https://code.castopod.org/adaures/castopod
 * Documentation YunoHost pour cette app : https://yunohost.org/app_castopod
 * Signaler un bug : https://github.com/YunoHost-Apps/castopod_ynh/issues
