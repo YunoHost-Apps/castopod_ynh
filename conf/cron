@@ -1,3 +1,4 @@
 * * * * * __APP__ /usr/bin/php__PHPVERSION__ __FINALPATH__/public/index.php scheduled-activities
 * * * * * __APP__ /usr/bin/php__PHPVERSION__ __FINALPATH__/public/index.php scheduled-video-clips
 * * * * * __APP__ /usr/bin/php__PHPVERSION__ __FINALPATH__/public/index.php scheduled-websub-publish
+
