@@ -117,6 +117,16 @@ chmod -R o-rwx "$final_path"
 chown -R $app:www-data "$final_path"
 
 #=================================================
+# MYSQL CONFIGURATION
+#=================================================
+
+if ynh_compare_current_package_version --comparison eq --version 1.0.0-96~ynh1
+then
+	ynh_script_progression --message="Upgrading MySQL configuration..." --weight=1
+    ynh_mysql_connect_as --user=$db_name --password=$db_pwd --database=$db_name < ./from_beta_16.sql.sql
+fi
+
+#=================================================
 # NGINX CONFIGURATION
 #=================================================
 ynh_script_progression --message="Upgrading NGINX web server configuration..." --weight=10
