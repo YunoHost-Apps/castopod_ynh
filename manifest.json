@@ -6,7 +6,7 @@
         "en": "Hosting platform made for podcasters",
         "fr": "Plateforme d'hébergement conçue pour les podcasteurs"
     },
-    "version": "1.0.0-99~ynh1",
+    "version": "1.0.0-99~ynh2",
     "url": "https://castopod.org/",
     "upstream": {
         "license": "GPL-3.0-only",
