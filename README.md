@@ -42,6 +42,7 @@ Castopod is currently in beta but already quite stable and used by podcasters ar
 
 **Shipped version:** 1.0.0-99~ynh2
 
+
 **Demo:** https://podcast.podlibre.org/@podlibre_fr
 
 ## Screenshots
