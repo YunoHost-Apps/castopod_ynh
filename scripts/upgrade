@@ -84,13 +84,6 @@ if ynh_legacy_permissions_exists; then
 fi
 
 #=================================================
-# UPGRADE DEPENDENCIES
-#=================================================
-ynh_script_progression --message="Upgrading dependencies..." --weight=1
-
-ynh_install_app_dependencies $pkg_dependencies
-
-#=================================================
 # CREATE DEDICATED USER
 #=================================================
 ynh_script_progression --message="Making sure dedicated system user exists..." --weight=1
@@ -127,12 +120,11 @@ then
 fi
 
 #=================================================
-# NGINX CONFIGURATION
+# UPGRADE DEPENDENCIES
 #=================================================
-ynh_script_progression --message="Upgrading NGINX web server configuration..." --weight=10
+ynh_script_progression --message="Upgrading dependencies..." --weight=1
 
-# Create a dedicated NGINX config
-ynh_add_nginx_config
+ynh_install_app_dependencies $pkg_dependencies
 
 #=================================================
 # PHP-FPM CONFIGURATION
@@ -141,6 +133,14 @@ ynh_script_progression --message="Upgrading PHP-FPM configuration..." --weight=2
 
 # Create a dedicated PHP-FPM config
 ynh_add_fpm_config --phpversion=$phpversion --usage=$fpm_usage --footprint=$fpm_footprint
+
+#=================================================
+# NGINX CONFIGURATION
+#=================================================
+ynh_script_progression --message="Upgrading NGINX web server configuration..." --weight=10
+
+# Create a dedicated NGINX config
+ynh_add_nginx_config
 
 #=================================================
 # CONFIGURE CASTOPOD
