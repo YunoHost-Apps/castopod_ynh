@@ -40,7 +40,7 @@ Castopod is currently in beta but already quite stable and used by podcasters ar
 - Multi-user: add contributors and set roles
 - i18n support: translated in English, French & Polish with more to come!
 
-**Version incluse :** 1.0.0-103~ynh1 *(:warning: Il s'agit de la branche `beta-23`. La [branche `master`](https://github.com/YunoHost-Apps/castopod_ynh/tree/master) utilisée dans le catalogue est actuellement en 1.0.0-99\~ynh2.)*
+**Version incluse :** 1.0.0-103~ynh1 *(:warning: Il s'agit de la branche `testing`. La [branche `master`](https://github.com/YunoHost-Apps/castopod_ynh/tree/master) utilisée dans le catalogue est actuellement en 1.0.0-99\~ynh2.)*
 
 
 **Démo :** https://podcast.podlibre.org/@podlibre_fr
