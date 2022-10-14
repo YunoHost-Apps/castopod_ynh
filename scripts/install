@@ -145,22 +145,22 @@ chmod 644 "/etc/cron.d/$app"
 # SETUP APPLICATION WITH CURL
 #=================================================
 
-# Set the app as temporarily public for curl call
-ynh_script_progression --message="Configuring SSOwat..." --weight=1
-# Making the app public for curl
-ynh_permission_update --permission="main" --add="visitors"
+# # Set the app as temporarily public for curl call
+# ynh_script_progression --message="Configuring SSOwat..." --weight=1
+# # Making the app public for curl
+# ynh_permission_update --permission="main" --add="visitors"
 
-# Reload NGINX
-ynh_systemd_action --service_name=nginx --action=reload
+# # Reload NGINX
+# ynh_systemd_action --service_name=nginx --action=reload
 
-# Installation with curl
-ynh_script_progression --message="Finalizing installation..." --weight=1
+# # Installation with curl
+# ynh_script_progression --message="Finalizing installation..." --weight=1
 
-ynh_local_curl "/cp-install"
+# ynh_local_curl "/cp-install"
 
-ynh_local_curl "/cp-install/create-superadmin" "email=$email" "username=$admin" "password=$password"
+# ynh_local_curl "/cp-install/create-superadmin" "email=$email" "username=$admin" "password=$password"
 
-ynh_permission_update --permission="main" --remove="visitors"
+# ynh_permission_update --permission="main" --remove="visitors"
 
 #=================================================
 # SETUP SSOWAT
