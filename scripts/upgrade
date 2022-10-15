@@ -22,7 +22,7 @@ final_path=$(ynh_app_setting_get --app=$app --key=final_path)
 db_name=$(ynh_app_setting_get --app=$app --key=db_name)
 db_pwd=$(ynh_app_setting_get --app=$app --key=mysqlpwd)
 redis_db=$(ynh_app_setting_get --app=$app --key=redis_db)
-phpversion=$YNH_PHP_VERSION
+phpversion=$(ynh_app_setting_get --app=$app --key=phpversion)
 
 fpm_footprint=$(ynh_app_setting_get --app=$app --key=fpm_footprint)
 fpm_free_footprint=$(ynh_app_setting_get --app=$app --key=fpm_free_footprint)
