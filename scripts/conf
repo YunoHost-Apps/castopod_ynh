@@ -56,10 +56,10 @@ set__fpm_footprint() {
     fi
 }
 
-set__free_footprint() {
-    if [ "$fpm_footprint" == "specific" ]
+set__fpm_free_footprint() {
+    if [ "$fpm_footprint" = "specific" ]
     then
-        ynh_app_setting_set --app=$app --key=fpm_footprint --value="$free_footprint"
+        ynh_app_setting_set --app=$app --key=fpm_footprint --value="$fpm_free_footprint"
     fi
 }
 
@@ -70,11 +70,11 @@ set__free_footprint() {
 ynh_app_config_validate() {
     _ynh_app_config_validate
 
-    if [ "${changed[fpm_usage]}" == "true" ] || [ "${changed[fpm_footprint]}" == "true" ] || [ "${changed[free_footprint]}" == "true" ]; then
-        # If fpm_footprint is set to 'specific', use $free_footprint value.
-        if [ "$fpm_footprint" == "specific" ]
+    if [ "${changed[fpm_usage]}" == "true" ] || [ "${changed[fpm_footprint]}" == "true" ] || [ "${changed[fpm_free_footprint]}" == "true" ]; then
+        # If fpm_footprint is set to 'specific', use $fpm_free_footprint value.
+        if [ "$fpm_footprint" = "specific" ]
         then
-            fpm_footprint=$free_footprint
+            fpm_footprint=$fpm_free_footprint
         fi
 
         if [ "$fpm_footprint" == "0" ]
