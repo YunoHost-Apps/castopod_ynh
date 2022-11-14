@@ -101,7 +101,7 @@ chown -R $app:www-data "$final_path"
 ynh_script_progression --message="Configuring PHP-FPM..." --weight=1
 
 # Create a dedicated PHP-FPM config
-ynh_add_fpm_config --phpversion=$YNH_PHP_VERSION --usage=$fpm_usage --footprint=$fpm_footprint
+ynh_add_fpm_config --phpversion=$phpversion --usage=$fpm_usage --footprint=$fpm_footprint
 phpversion=$(ynh_app_setting_get --app=$app --key=phpversion)
 
 #=================================================
