@@ -40,7 +40,7 @@ Castopod is currently in beta but already quite stable and used by podcasters ar
 - Multi-user: add contributors and set roles
 - i18n support: translated in English, French & Polish with more to come!
 
-**Shipped version:** 1.1.0~ynh1
+**Shipped version:** 1.1.1~ynh1
 
 **Demo:** https://podcast.podlibre.org/@podlibre_fr
 
