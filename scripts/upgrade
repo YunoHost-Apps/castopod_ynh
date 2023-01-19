@@ -116,6 +116,8 @@ chmod 750 "$final_path"
 chmod -R o-rwx "$final_path"
 chown -R $app:www-data "$final_path"
 
+ynh_mysql_connect_as --user=$db_name --password=$db_pwd --database=$db_name < ./from_beta_16.sql
+
 #=================================================
 # UPGRADE DEPENDENCIES
 #=================================================
