@@ -6,9 +6,7 @@ Castopod is easy to install and was built on top of CodeIgniter4, a powerful PHP
 
 - Focused on data sovereignty: your content, audience, and analytics belong to you, and you only
 - Podcasting 2.0 features: GUID, locked, transcripts, funding, chapters, location, persons, soundbites…
-- Built-in social network
-- Built-in analytics
-- Built-in marketing tools
+- Built-in social network, analytics, marketing tools
 - Monetization
 - Publish your episodes everywhere with RSS:
 - Podcast import: move your existing podcast into Castopod

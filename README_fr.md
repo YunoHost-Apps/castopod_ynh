@@ -5,8 +5,7 @@ It shall NOT be edited by hand.
 
 # Castopod pour YunoHost
 
-[![Niveau d’intégration](https://dash.yunohost.org/integration/castopod.svg)](https://dash.yunohost.org/appci/app/castopod) ![Statut du fonctionnement](https://ci-apps.yunohost.org/ci/badges/castopod.status.svg) ![Statut de maintenance](https://ci-apps.yunohost.org/ci/badges/castopod.maintain.svg)
-
+[![Niveau d’intégration](https://dash.yunohost.org/integration/castopod.svg)](https://dash.yunohost.org/appci/app/castopod) ![Statut du fonctionnement](https://ci-apps.yunohost.org/ci/badges/castopod.status.svg) ![Statut de maintenance](https://ci-apps.yunohost.org/ci/badges/castopod.maintain.svg)  
 [![Installer Castopod avec YunoHost](https://install-app.yunohost.org/install-with-yunohost.svg)](https://install-app.yunohost.org/?app=castopod)
 
 *[Read this readme in english.](./README.md)*
@@ -27,12 +26,9 @@ Castopod is currently in beta but already quite stable and used by podcasters ar
 
 ### Features
 
-- Free & open-source (AGPL v3 License)
 - Focused on data sovereignty: your content, audience, and analytics belong to you, and you only
-- Podcasting 2.0 features: GUID, locked, transcripts, funding, chapters, location, persons, soundbites, …
-- Built-in social network
-- Built-in analytics
-- Built-in marketing tools
+- Podcasting 2.0 features: GUID, locked, transcripts, funding, chapters, location, persons, soundbites…
+- Built-in social network, analytics, marketing tools
 - Monetization
 - Publish your episodes everywhere with RSS:
 - Podcast import: move your existing podcast into Castopod
@@ -41,7 +37,7 @@ Castopod is currently in beta but already quite stable and used by podcasters ar
 - Multi-user: add contributors and set roles
 - i18n support: translated in English, French & Polish with more to come!
 
-**Version incluse :** 1.0.1~ynh1
+**Version incluse :** 1.1.2~ynh1
 
 **Démo :** https://podcast.podlibre.org/@podlibre_fr
 

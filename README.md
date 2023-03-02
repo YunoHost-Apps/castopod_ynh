@@ -27,12 +27,9 @@ Castopod is currently in beta but already quite stable and used by podcasters ar
 
 ### Features
 
-- Free & open-source (AGPL v3 License)
 - Focused on data sovereignty: your content, audience, and analytics belong to you, and you only
-- Podcasting 2.0 features: GUID, locked, transcripts, funding, chapters, location, persons, soundbites, …
-- Built-in social network
-- Built-in analytics
-- Built-in marketing tools
+- Podcasting 2.0 features: GUID, locked, transcripts, funding, chapters, location, persons, soundbites…
+- Built-in social network, analytics, marketing tools
 - Monetization
 - Publish your episodes everywhere with RSS:
 - Podcast import: move your existing podcast into Castopod
@@ -41,7 +38,7 @@ Castopod is currently in beta but already quite stable and used by podcasters ar
 - Multi-user: add contributors and set roles
 - i18n support: translated in English, French & Polish with more to come!
 
-**Shipped version:** 1.0.1~ynh1
+**Shipped version:** 1.1.2~ynh1
 
 **Demo:** https://podcast.podlibre.org/@podlibre_fr
 
