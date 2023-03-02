@@ -5,7 +5,8 @@ It shall NOT be edited by hand.
 
 # Castopod for YunoHost
 
-[![Integration level](https://dash.yunohost.org/integration/castopod.svg)](https://dash.yunohost.org/appci/app/castopod) ![Working status](https://ci-apps.yunohost.org/ci/badges/castopod.status.svg) ![Maintenance status](https://ci-apps.yunohost.org/ci/badges/castopod.maintain.svg)  
+[![Integration level](https://dash.yunohost.org/integration/castopod.svg)](https://dash.yunohost.org/appci/app/castopod) ![Working status](https://ci-apps.yunohost.org/ci/badges/castopod.status.svg) ![Maintenance status](https://ci-apps.yunohost.org/ci/badges/castopod.maintain.svg)
+
 [![Install Castopod with YunoHost](https://install-app.yunohost.org/install-with-yunohost.svg)](https://install-app.yunohost.org/?app=castopod)
 
 *[Lire ce readme en français.](./README_fr.md)*
@@ -47,21 +48,6 @@ Castopod is currently in beta but already quite stable and used by podcasters ar
 ## Screenshots
 
 ![Screenshot of Castopod](./doc/screenshots/screenshot.png)
-
-## Disclaimers / important information
-
-## Configuration
-
- * How to configure this app: Go to `domain.ltd/cp-admin` to connect to the administration panel.
-
-#### Multi-user support
-
- * Are LDAP and HTTP auth supported? **No**
- * Can the app be used by multiple users? **Yes**
-
-## Limitations
-
-* :warning: Installation possible only on a root domain or subdomain.
 
 ## Documentation and resources
 

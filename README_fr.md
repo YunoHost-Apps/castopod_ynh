@@ -5,15 +5,16 @@ It shall NOT be edited by hand.
 
 # Castopod pour YunoHost
 
-[![Niveau d'intégration](https://dash.yunohost.org/integration/castopod.svg)](https://dash.yunohost.org/appci/app/castopod) ![Statut du fonctionnement](https://ci-apps.yunohost.org/ci/badges/castopod.status.svg) ![Statut de maintenance](https://ci-apps.yunohost.org/ci/badges/castopod.maintain.svg)  
+[![Niveau d’intégration](https://dash.yunohost.org/integration/castopod.svg)](https://dash.yunohost.org/appci/app/castopod) ![Statut du fonctionnement](https://ci-apps.yunohost.org/ci/badges/castopod.status.svg) ![Statut de maintenance](https://ci-apps.yunohost.org/ci/badges/castopod.maintain.svg)
+
 [![Installer Castopod avec YunoHost](https://install-app.yunohost.org/install-with-yunohost.svg)](https://install-app.yunohost.org/?app=castopod)
 
 *[Read this readme in english.](./README.md)*
 
-> *Ce package vous permet d'installer Castopod rapidement et simplement sur un serveur YunoHost.
-Si vous n'avez pas YunoHost, regardez [ici](https://yunohost.org/#/install) pour savoir comment l'installer et en profiter.*
+> *Ce package vous permet d’installer Castopod rapidement et simplement sur un serveur YunoHost.
+Si vous n’avez pas YunoHost, regardez [ici](https://yunohost.org/#/install) pour savoir comment l’installer et en profiter.*
 
-## Vue d'ensemble
+## Vue d’ensemble
 
 Castopod is a free & open-source hosting platform made for podcasters who want engage and interact with their audience.
 
@@ -44,30 +45,15 @@ Castopod is currently in beta but already quite stable and used by podcasters ar
 
 **Démo :** https://podcast.podlibre.org/@podlibre_fr
 
-## Captures d'écran
+## Captures d’écran
 
-![Capture d'écran de Castopod](./doc/screenshots/screenshot.png)
-
-## Avertissements / informations importantes
-
-## Configuration
-
-  * Comment configurer cette application : Accédez à `domain.ltd/cp-admin` pour vous connecter au panneau d'administration.
-
-#### Prise en charge multi-utilisateurs
-
-  * Les authentifications LDAP et HTTP sont-elles prises en charge ? **Non**
-  * L'application peut-elle être utilisée par plusieurs utilisateurs ? **Oui**
-
-## Limites
-
-* :warning : Installation possible uniquement sur un domaine racine ou un sous-domaine. 
+![Capture d’écran de Castopod](./doc/screenshots/screenshot.png)
 
 ## Documentations et ressources
 
-* Site officiel de l'app : <https://castopod.org/>
-* Documentation officielle de l'admin : <https://docs.castopod.org/>
-* Dépôt de code officiel de l'app : <https://code.castopod.org/adaures/castopod>
+* Site officiel de l’app : <https://castopod.org/>
+* Documentation officielle de l’admin : <https://docs.castopod.org/>
+* Dépôt de code officiel de l’app : <https://code.castopod.org/adaures/castopod>
 * Documentation YunoHost pour cette app : <https://yunohost.org/app_castopod>
 * Signaler un bug : <https://github.com/YunoHost-Apps/castopod_ynh/issues>
 
@@ -83,4 +69,4 @@ ou
 sudo yunohost app upgrade castopod -u https://github.com/YunoHost-Apps/castopod_ynh/tree/testing --debug
 ```
 
-**Plus d'infos sur le packaging d'applications :** <https://yunohost.org/packaging_apps>
+**Plus d’infos sur le packaging d’applications :** <https://yunohost.org/packaging_apps>
