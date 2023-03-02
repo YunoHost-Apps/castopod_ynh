@@ -23,18 +23,8 @@ ynh_script_progression --message="Removing the Redis database..." --weight=1
 
 ynh_redis_remove_db "$redis_db"
 
-#=================================================
-# REMOVE NGINX CONFIGURATION
-#=================================================
-ynh_script_progression --message="Removing NGINX web server configuration..." --weight=1
-
 # Remove the dedicated NGINX config
 ynh_remove_nginx_config
-
-#=================================================
-# REMOVE PHP-FPM CONFIGURATION
-#=================================================
-ynh_script_progression --message="Removing PHP-FPM configuration..." --weight=2
 
 # Remove the dedicated PHP-FPM config
 ynh_remove_fpm_config
