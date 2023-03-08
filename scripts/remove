@@ -12,9 +12,9 @@ source /usr/share/yunohost/helpers
 #=================================================
 # LOAD SETTINGS
 #=================================================
-ynh_script_progression --message="Loading installation settings..." --weight=1
+# ynh_script_progression --message="Loading installation settings..." --weight=1
 
-redis_db=$(ynh_app_setting_get --app=$app --key=redis_db)
+# redis_db=$(ynh_app_setting_get --app=$app --key=redis_db)
 
 #=================================================
 # REMOVE THE REDIS DATABASE
