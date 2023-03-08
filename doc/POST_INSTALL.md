@@ -1,0 +1,1 @@
+After post-installation configuration, go to `__DOMAIN__/cp-admin` to connect to the administration panel.

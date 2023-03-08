@@ -10,93 +10,33 @@ source _common.sh
 source /usr/share/yunohost/helpers
 
 #=================================================
-# LOAD SETTINGS
-#=================================================
-ynh_script_progression --message="Loading installation settings..." --weight=1
-
-app=$YNH_APP_INSTANCE_NAME
-
-domain=$(ynh_app_setting_get --app=$app --key=domain)
-path_url=$(ynh_app_setting_get --app=$app --key=path)
-final_path=$(ynh_app_setting_get --app=$app --key=final_path)
-db_name=$(ynh_app_setting_get --app=$app --key=db_name)
-db_pwd=$(ynh_app_setting_get --app=$app --key=mysqlpwd)
-redis_db=$(ynh_app_setting_get --app=$app --key=redis_db)
-phpversion=$YNH_PHP_VERSION
-
-fpm_footprint=$(ynh_app_setting_get --app=$app --key=fpm_footprint)
-fpm_free_footprint=$(ynh_app_setting_get --app=$app --key=fpm_free_footprint)
-fpm_usage=$(ynh_app_setting_get --app=$app --key=fpm_usage)
-
-#=================================================
 # CHECK VERSION
 #=================================================
 
 upgrade_type=$(ynh_check_app_version_changed)
 
 #=================================================
-# BACKUP BEFORE UPGRADE THEN ACTIVE TRAP
-#=================================================
-ynh_script_progression --message="Backing up the app before upgrading (may take a while)..." --weight=1
-
-# Backup the current version of the app
-ynh_backup_before_upgrade
-ynh_clean_setup () {
-	# Restore it if the upgrade fails
-	ynh_restore_upgradebackup
-}
-# Exit if an error occurs during the execution of the script
-ynh_abort_if_errors
-
-#=================================================
 # ENSURE DOWNWARD COMPATIBILITY
 #=================================================
 ynh_script_progression --message="Ensuring downward compatibility..." --weight=1
 
-# If db_name doesn't exist, create it
-if [ -z "$db_name" ]; then
-	db_name=$(ynh_sanitize_dbid --db_name=$app)
-	ynh_app_setting_set --app=$app --key=db_name --value=$db_name
-fi
-
-# If final_path doesn't exist, create it
-if [ -z "$final_path" ]; then
-	final_path=/var/www/$app
-	ynh_app_setting_set --app=$app --key=final_path --value=$final_path
-fi
-
 # If fpm_footprint doesn't exist, create it
-if [ -z "$fpm_footprint" ]; then
+if [ -z "${fpm_footprint:-}" ]; then
     fpm_footprint=low
     ynh_app_setting_set --app=$app --key=fpm_footprint --value=$fpm_footprint
 fi
 
 # If fpm_free_footprint doesn't exist, create it
-if [ -z "$fpm_free_footprint" ]; then
+if [ -z "${fpm_free_footprint:-}" ]; then
     fpm_free_footprint=0
     ynh_app_setting_set --app=$app --key=fpm_free_footprint --value=$fpm_free_footprint
 fi
 
 # If fpm_usage doesn't exist, create it
-if [ -z "$fpm_usage" ]; then
+if [ -z "${fpm_usage:-}" ]; then
     fpm_usage=low
     ynh_app_setting_set --app=$app --key=fpm_usage --value=$fpm_usage
 fi
-
-# Cleaning legacy permissions
-if ynh_legacy_permissions_exists; then
-	ynh_legacy_permissions_delete_all
-
-	ynh_app_setting_delete --app=$app --key=is_public
-fi
-
-#=================================================
-# CREATE DEDICATED USER
-#=================================================
-ynh_script_progression --message="Making sure dedicated system user exists..." --weight=1
-
-# Create a dedicated user (if not existing)
-ynh_system_user_create --username=$app --home_dir=$final_path
 
 #=================================================
 # DOWNLOAD, CHECK AND UNPACK SOURCE
@@ -106,73 +46,40 @@ if [ "$upgrade_type" == "UPGRADE_APP" ]
 then
 	ynh_script_progression --message="Upgrading source files..." --weight=1
 
-	ynh_secure_remove --file="$final_path/app"
-	ynh_secure_remove --file="$final_path/public/assets"
+	ynh_secure_remove --file="$install_dir/app"
+	ynh_secure_remove --file="$install_dir/public/assets"
 	# Download, check integrity, uncompress and patch the source from app.src
-	ynh_setup_source --dest_dir="$final_path" --keep=".env"
+	ynh_setup_source --dest_dir="$install_dir" --keep=".env"
 fi
 
-chmod 750 "$final_path"
-chmod -R o-rwx "$final_path"
-chown -R $app:www-data "$final_path"
+chmod -R o-rwx "$install_dir"
+chown -R $app:www-data "$install_dir"
 
 #=================================================
-# MYSQL CONFIGURATION
+# RECONFIGURE THE APP (UPDATE CONF, APPLY MIGRATIONS...)
 #=================================================
-
-if ynh_compare_current_package_version --comparison eq --version 1.0.0-96~ynh1
-then
-	ynh_script_progression --message="Upgrading MySQL configuration..." --weight=1
-    ynh_mysql_connect_as --user=$db_name --password=$db_pwd --database=$db_name < ./from_beta_16.sql
-fi
-
+# UPDATE A CONFIG FILE
 #=================================================
-# UPGRADE DEPENDENCIES
-#=================================================
-ynh_script_progression --message="Upgrading dependencies..." --weight=1
-
-ynh_install_app_dependencies $pkg_dependencies
-
-#=================================================
-# PHP-FPM CONFIGURATION
-#=================================================
-ynh_script_progression --message="Upgrading PHP-FPM configuration..." --weight=2
+ynh_script_progression --message="Updating a configuration file..." --weight=1
 
 # Create a dedicated PHP-FPM config
 ynh_add_fpm_config --phpversion=$phpversion --usage=$fpm_usage --footprint=$fpm_footprint
 
-#=================================================
-# NGINX CONFIGURATION
-#=================================================
-ynh_script_progression --message="Upgrading NGINX web server configuration..." --weight=10
-
 # Create a dedicated NGINX config
 ynh_add_nginx_config
-
-#=================================================
-# CONFIGURE CASTOPOD
-#=================================================
-# ynh_script_progression --message="Configuring Castopod..." --weight=1
-
-# ynh_add_config --template="../conf/.env.example" --destination="$final_path/.env"
-# chmod 600 $final_path/.env
-# chown $app:www-data "$final_path/.env"
-
-#=================================================
-# SETUP CRON
-#=================================================
-ynh_script_progression --message="Setuping cron..." --weight=1
 
 ynh_add_config --template="../conf/cron" --destination="/etc/cron.d/$app"
 chown root: "/etc/cron.d/$app"
 chmod 644 "/etc/cron.d/$app"
 
 #=================================================
-# RELOAD NGINX
+# CONFIGURE CASTOPOD
 #=================================================
-ynh_script_progression --message="Reloading NGINX web server..." --weight=1
+# ynh_script_progression --message="Configuring Castopod..." --weight=1
 
-ynh_systemd_action --service_name=nginx --action=reload
+# ynh_add_config --template="../conf/.env.example" --destination="$install_dir/.env"
+# chmod 600 $install_dir/.env
+# chown $app:www-data "$install_dir/.env"
 
 #=================================================
 # END OF SCRIPT
