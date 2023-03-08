@@ -16,21 +16,20 @@ Si vous n’avez pas YunoHost, regardez [ici](https://yunohost.org/#/install) po
 
 ## Vue d’ensemble
 
-Castopod is a free & open-source hosting platform made for podcasters who want engage and interact with their audience.
-Castopod is easy to install and was built on top of CodeIgniter4, a powerful PHP framework with a very small footprint.
+Castopod est une plate-forme d'hébergement gratuite et open source conçue pour les podcasteurs qui souhaitent interagir avec leur public.
 
 
-### Features
+### Caractéristiques
 
-- Focused on data sovereignty: your content, audience, and analytics belong to you, and you only
-- Podcasting 2.0 features: GUID, locked, transcripts, funding, chapters, location, persons, soundbites…
-- Built-in social network, analytics, marketing tools
-- Monetization
-- Publish your episodes everywhere with RSS:
-- Podcast import: move your existing podcast into Castopod
-- Move your podcast out of Castopod
-- Multi-tenant: host as many podcasts as you want
-- Multi-user: add contributors and set roles
+- Axé sur la souveraineté des données : votre contenu, votre audience et vos analyses vous appartiennent, et vous seul
+- Fonctionnalités du podcasting 2.0 : GUID, verrouillé, transcriptions, financement, chapitres, localisation, personnes, extraits sonores…
+- Réseau social intégré, outils d'analyse et de marketing
+- Monétisation
+- Publiez vos épisodes partout avec RSS
+- Importation de podcast : déplacez votre podcast existant dans Castopod
+- Déplacez votre podcast hors de Castopod
+- Multi-locataire : hébergez autant de podcasts que vous le souhaitez
+- Multi-utilisateur : ajouter des contributeurs et définir des rôles
 
 **Version incluse :** 1.0.1~ynh1
 
