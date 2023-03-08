@@ -19,7 +19,7 @@ source /usr/share/yunohost/helpers
 #=================================================
 # REMOVE THE REDIS DATABASE
 #=================================================
-ynh_script_progression --message="Removing the Redis database..." --weight=1
+ynh_script_progression --message="Removing Redis database..." --weight=1
 
 ynh_redis_remove_db "$redis_db"
 
