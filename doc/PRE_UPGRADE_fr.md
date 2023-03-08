@@ -1,0 +1,1 @@
+Castopod ne mettra pas à jour les versions bêta précédentes.
