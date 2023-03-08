@@ -5,7 +5,7 @@ name = "Castopod"
 description.en = "Hosting platform made for podcasters"
 description.fr = "Plateforme d'hébergement conçue pour les podcasteurs"
 
-version = "1.0.1~ynh1"
+version = "1.1.2~ynh1"
 
 maintainers = ["eric_G"]
 
