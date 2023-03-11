@@ -17,7 +17,7 @@ admindoc = "https://docs.castopod.org/"
 code = "https://code.castopod.org/adaures/castopod"
 
 [integration]
-yunohost = ">= 11.1.13"
+yunohost = ">= 11.1.15"
 architectures = "all"
 multi_instance = true
 ldap = false
@@ -40,6 +40,13 @@ ram.runtime = "50M"
     default = "visitors"
 
 [resources]
+
+    [resources.sources]
+
+        [resources.sources.main]
+        url = "https://code.castopod.org/adaures/castopod/uploads/ab09b21e1e0f3ef02518fc0794d6a3be/castopod-1.1.2.zip"
+        sha256 = "1412a4d272826355c039ac045055ce33a0c00d238ac860c7761d8f2555b4241a"
+
     [resources.system_user]
 
     [resources.install_dir]
