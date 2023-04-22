@@ -19,7 +19,6 @@ If you don't have YunoHost, please consult [the guide](https://yunohost.org/#/in
 Castopod is a free & open-source hosting platform made for podcasters who want engage and interact with their audience.
 Castopod is easy to install and was built on top of CodeIgniter4, a powerful PHP framework with a very small footprint.
 
-
 ### Features
 
 - Focused on data sovereignty: your content, audience, and analytics belong to you, and you only
