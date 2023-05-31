@@ -30,7 +30,7 @@ Castopod est une plate-forme d'hébergement gratuite et open source conçue pour
 - Multi-locataire : hébergez autant de podcasts que vous le souhaitez
 - Multi-utilisateur : ajouter des contributeurs et définir des rôles
 
-**Version incluse :** 1.3.3~ynh1
+**Version incluse :** 1.3.5~ynh1
 
 **Démo :** https://podcast.podlibre.org/@podlibre_fr
 
