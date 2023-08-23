@@ -17,7 +17,7 @@ admindoc = "https://docs.castopod.org/"
 code = "https://code.castopod.org/adaures/castopod"
 
 [integration]
-yunohost = ">= 11.1.21"
+yunohost = ">= 11.2"
 architectures = "all"
 multi_instance = true
 ldap = false
@@ -28,14 +28,9 @@ ram.runtime = "50M"
 
 [install]
     [install.domain]
-    help.en = "Castopod needs to be installed in a dedicated domain or sub-domain."
-    help.fr = "Castopod doit être installé dans un domaine ou sous-domaine dédié."
     type = "domain"
-    full_domain = true
 
     [install.init_main_permission]
-    help.en = "If enabled, Castopod will be accessible by people who do not have an account. This can be changed later via the webadmin."
-    help.fr = "Si cette case est cochée, Castopod sera accessible aux personnes n’ayant pas de compte. Vous pourrez changer ceci plus tard via la webadmin."
     type = "group"
     default = "visitors"
 
