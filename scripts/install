@@ -60,6 +60,7 @@ ynh_app_setting_set --app="$app" --key=redis_db --value="$redis_db"
 
 #redis_number=$(( $YNH_APP_INSTANCE_NUMBER - 1 ))
 ynh_add_config --template="../conf/.env.example" --destination="$install_dir/.env"
+
 chmod 600 $install_dir/.env
 chown $app:www-data "$install_dir/.env"
 
