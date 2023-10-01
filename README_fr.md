@@ -43,7 +43,6 @@ Castopod est une plate-forme d'hébergement gratuite et open source conçue pour
 * Site officiel de l’app : <https://castopod.org/>
 * Documentation officielle de l’admin : <https://docs.castopod.org/>
 * Dépôt de code officiel de l’app : <https://code.castopod.org/adaures/castopod>
-* Documentation YunoHost pour cette app : <https://yunohost.org/app_castopod>
 * Signaler un bug : <https://github.com/YunoHost-Apps/castopod_ynh/issues>
 
 ## Informations pour les développeurs
