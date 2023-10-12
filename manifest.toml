@@ -34,6 +34,9 @@ ram.runtime = "50M"
     type = "group"
     default = "visitors"
 
+    [install.admin]
+    type = "user"
+
 [resources]
 
     [resources.sources]
@@ -44,8 +47,11 @@ ram.runtime = "50M"
         in_subdir = true
 
     [resources.system_user]
+    allow_email = true
 
     [resources.install_dir]
+
+    [resources.data_dir]
 
     [resources.permissions]
     main.url = "/"

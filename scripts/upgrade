@@ -73,17 +73,20 @@ chown root: "/etc/cron.d/$app"
 chmod 644 "/etc/cron.d/$app"
 
 #=================================================
-# CONFIGURE CASTOPOD
+# CONFIGURE CASTOPOD DATABASE
 #=================================================
 ynh_script_progression --message="Configuring Castopod database..." --weight=1
 
 ynh_mysql_connect_as --user=$db_user --password=$db_pwd --database=$db_name < "../conf/v1.5.2.sql"
 
-#ynh_script_progression --message="Configuring Castopod..." --weight=1
+#=================================================
+# ADD CONFIGURE
+#=================================================
+ynh_script_progression --message="Configuring Castopod..." --weight=1
 
-# ynh_add_config --template="../conf/.env.example" --destination="$install_dir/.env"
-# chmod 600 $install_dir/.env
-# chown $app:www-data "$install_dir/.env"
+ynh_add_config --template="../conf/.env.example" --destination="$install_dir/.env"
+chmod 600 $install_dir/.env
+chown $app:www-data "$install_dir/.env"
 
 #=================================================
 # END OF SCRIPT
