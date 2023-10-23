@@ -66,6 +66,14 @@ chmod 600 $install_dir/.env
 chown $app:www-data "$install_dir/.env"
 
 #=================================================
+# RUN MIGRATIONS
+#=================================================
+
+pushd $install_dir
+  sudo -u $app php${phpversion} spark migrate
+popd
+
+#=================================================
 # END OF SCRIPT
 #=================================================
 
