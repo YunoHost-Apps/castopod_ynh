@@ -70,7 +70,7 @@ chown $app:www-data "$install_dir/.env"
 #=================================================
 
 pushd $install_dir
-  sudo -u $app php${phpversion} spark migrate
+  sudo -u $app php${phpversion} spark migrate --all
 popd
 
 #=================================================
