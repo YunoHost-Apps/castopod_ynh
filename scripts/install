@@ -17,11 +17,6 @@ fpm_footprint="low"
 fpm_free_footprint=0
 fpm_usage="low"
 
-#=================================================
-# STORE SETTINGS FROM MANIFEST
-#=================================================
-ynh_script_progression --message="Storing installation settings..." --weight=1
-
 ynh_app_setting_set --app=$app --key=fpm_footprint --value=$fpm_footprint
 ynh_app_setting_set --app=$app --key=fpm_free_footprint --value=$fpm_free_footprint
 ynh_app_setting_set --app=$app --key=fpm_usage --value=$fpm_usage
@@ -57,7 +52,7 @@ chmod 644 "/etc/cron.d/$app"
 #=================================================
 # CONFIGURE CASTOPOD
 #=================================================
-ynh_script_progression --message="Configuring Castopod..." --weight=1
+ynh_script_progression --message="Configuring $app..." --weight=1
 
 # Configure redis
 redis_db=$(ynh_redis_get_free_db)
@@ -65,8 +60,18 @@ ynh_app_setting_set --app="$app" --key=redis_db --value="$redis_db"
 
 #redis_number=$(( $YNH_APP_INSTANCE_NUMBER - 1 ))
 ynh_add_config --template="../conf/.env.example" --destination="$install_dir/.env"
+
 chmod 600 $install_dir/.env
 chown $app:www-data "$install_dir/.env"
+
+#=================================================
+# RUN MIGRATIONS
+#=================================================
+ynh_script_progression --message="Configuring $app database..." --weight=1
+
+pushd $install_dir
+  ynh_exec_warn_less ynh_exec_as $app php${phpversion} spark migrate --all
+popd
 
 #=================================================
 # END OF SCRIPT

@@ -5,7 +5,7 @@ name = "Castopod"
 description.en = "Hosting platform made for podcasters"
 description.fr = "Plateforme d'hébergement conçue pour les podcasteurs"
 
-version = "1.1.2~ynh2"
+version = "1.6.5~ynh1"
 
 maintainers = ["eric_G"]
 
@@ -17,30 +17,37 @@ admindoc = "https://docs.castopod.org/"
 code = "https://code.castopod.org/adaures/castopod"
 
 [integration]
-yunohost = ">= 11.1.13"
+yunohost = ">= 11.2"
 architectures = "all"
 multi_instance = true
 ldap = false
 sso = false
 disk = "50M"
-ram.build = "100M"
+ram.build = "150M"
 ram.runtime = "50M"
 
 [install]
     [install.domain]
-    help.en = "Castopod needs to be installed in a dedicated domain or sub-domain."
-    help.fr = "Castopod doit être installé dans un domaine ou sous-domaine dédié."
     type = "domain"
-    full_domain = true
 
     [install.init_main_permission]
-    help.en = "If enabled, Castopod will be accessible by people who do not have an account. This can be changed later via the webadmin."
-    help.fr = "Si cette case est cochée, Castopod sera accessible aux personnes n’ayant pas de compte. Vous pourrez changer ceci plus tard via la webadmin."
     type = "group"
     default = "visitors"
 
+    [install.admin]
+    type = "user"
+
 [resources]
+
+    [resources.sources]
+
+        [resources.sources.main]
+        url = "https://code.castopod.org/adaures/castopod/uploads/fe7be588c53a9e1ed63af47e6e624ad1/castopod-1.6.5.zip"
+        sha256 = "3618afa82605dda4f791efe5bb312d1fab3c4b0d702086f9cb75e57d627b6306"
+        in_subdir = true
+
     [resources.system_user]
+    allow_email = true
 
     [resources.install_dir]
 
@@ -48,7 +55,7 @@ ram.runtime = "50M"
     main.url = "/"
 
     [resources.apt]
-    packages = "mariadb-server ffmpeg php8.1-fpm php8.1-mysql php8.1-gd php8.1-intl php8.1-curl php8.1-mbstring php8.1-xml php8.1-mysqlnd"
+    packages = "mariadb-server, ffmpeg, php8.2-gd, php8.2-intl, php8.2-curl, php8.2-exif, php8.2-mbstring, php8.2-xml, php8.2-mysqlnd"
 
     [resources.database]
     type = "mysql"

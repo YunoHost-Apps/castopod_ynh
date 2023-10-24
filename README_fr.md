@@ -18,7 +18,6 @@ Si vous n’avez pas YunoHost, regardez [ici](https://yunohost.org/#/install) po
 
 Castopod est une plate-forme d'hébergement gratuite et open source conçue pour les podcasteurs qui souhaitent interagir avec leur public.
 
-
 ### Caractéristiques
 
 - Axé sur la souveraineté des données : votre contenu, votre audience et vos analyses vous appartiennent, et vous seul
@@ -31,7 +30,7 @@ Castopod est une plate-forme d'hébergement gratuite et open source conçue pour
 - Multi-locataire : hébergez autant de podcasts que vous le souhaitez
 - Multi-utilisateur : ajouter des contributeurs et définir des rôles
 
-**Version incluse :** 1.1.2~ynh2
+**Version incluse :** 1.6.5~ynh1
 
 **Démo :** https://podcast.podlibre.org/@podlibre_fr
 
@@ -44,7 +43,6 @@ Castopod est une plate-forme d'hébergement gratuite et open source conçue pour
 * Site officiel de l’app : <https://castopod.org/>
 * Documentation officielle de l’admin : <https://docs.castopod.org/>
 * Dépôt de code officiel de l’app : <https://code.castopod.org/adaures/castopod>
-* Documentation YunoHost pour cette app : <https://yunohost.org/app_castopod>
 * Signaler un bug : <https://github.com/YunoHost-Apps/castopod_ynh/issues>
 
 ## Informations pour les développeurs
