@@ -46,10 +46,8 @@ if [ "$upgrade_type" == "UPGRADE_APP" ]
 then
 	ynh_script_progression --message="Upgrading source files..." --weight=1
 
-	ynh_secure_remove --file="$install_dir/app"
-	ynh_secure_remove --file="$install_dir/public/assets"
 	# Download, check integrity, uncompress and patch the source from app.src
-	ynh_setup_source --dest_dir="$install_dir" --keep=".env"
+	ynh_setup_source --dest_dir="$install_dir" --keep=".env public/media"
 fi
 
 chmod -R o-rwx "$install_dir"
@@ -68,7 +66,7 @@ ynh_add_fpm_config --usage=$fpm_usage --footprint=$fpm_footprint
 # Create a dedicated NGINX config
 ynh_add_nginx_config
 
-ynh_add_config --template="../conf/cron" --destination="/etc/cron.d/$app"
+ynh_add_config --template="cron" --destination="/etc/cron.d/$app"
 chown root: "/etc/cron.d/$app"
 chmod 644 "/etc/cron.d/$app"
 
@@ -77,7 +75,7 @@ chmod 644 "/etc/cron.d/$app"
 #=================================================
 ynh_script_progression --message="Configuring $app..." --weight=1
 
-ynh_add_config --template="../conf/.env.example" --destination="$install_dir/.env"
+ynh_add_config --template=".env.example" --destination="$install_dir/.env"
 chmod 600 $install_dir/.env
 chown $app:www-data "$install_dir/.env"
 

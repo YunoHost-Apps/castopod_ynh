@@ -43,7 +43,7 @@ ynh_add_fpm_config --usage=$fpm_usage --footprint=$fpm_footprint
 # Create a dedicated NGINX config
 ynh_add_nginx_config
 
-ynh_add_config --template="../conf/cron" --destination="/etc/cron.d/$app"
+ynh_add_config --template="cron" --destination="/etc/cron.d/$app"
 chown root: "/etc/cron.d/$app"
 chmod 644 "/etc/cron.d/$app"
 
@@ -59,7 +59,7 @@ redis_db=$(ynh_redis_get_free_db)
 ynh_app_setting_set --app="$app" --key=redis_db --value="$redis_db"
 
 #redis_number=$(( $YNH_APP_INSTANCE_NUMBER - 1 ))
-ynh_add_config --template="../conf/.env.example" --destination="$install_dir/.env"
+ynh_add_config --template=".env.example" --destination="$install_dir/.env"
 
 chmod 600 $install_dir/.env
 chown $app:www-data "$install_dir/.env"
