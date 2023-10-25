@@ -73,20 +73,22 @@ chown root: "/etc/cron.d/$app"
 chmod 644 "/etc/cron.d/$app"
 
 #=================================================
-# CONFIGURE CASTOPOD DATABASE
-#=================================================
-ynh_script_progression --message="Configuring Castopod database..." --weight=1
-
-ynh_mysql_connect_as --user=$db_user --password=$db_pwd --database=$db_name < "../conf/v1.5.2.sql"
-
-#=================================================
 # ADD CONFIGURE
 #=================================================
-ynh_script_progression --message="Configuring Castopod..." --weight=1
+ynh_script_progression --message="Configuring $app..." --weight=1
 
 ynh_add_config --template="../conf/.env.example" --destination="$install_dir/.env"
 chmod 600 $install_dir/.env
 chown $app:www-data "$install_dir/.env"
+
+#=================================================
+# RUN MIGRATIONS
+#=================================================
+ynh_script_progression --message="Configuring $app database..." --weight=1
+
+pushd $install_dir
+  ynh_exec_warn_less ynh_exec_as $app php${phpversion} spark migrate --all
+popd
 
 #=================================================
 # END OF SCRIPT
