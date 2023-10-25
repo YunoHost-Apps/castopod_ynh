@@ -13,6 +13,8 @@ source /usr/share/yunohost/helpers
 # RETRIEVE ARGUMENTS FROM THE MANIFEST
 #=================================================
 
+email=$(ynh_user_get_info --username=$admin --key=mail)
+
 fpm_footprint="low"
 fpm_free_footprint=0
 fpm_usage="low"
