@@ -73,7 +73,7 @@ chmod 644 "/etc/cron.d/$app"
 #=================================================
 # CONFIGURE CASTOPOD
 #=================================================
-ynh_script_progression --message="Configuring Castopod..." --weight=1
+ynh_script_progression --message="Configuring $app..." --weight=1
 
 ynh_add_config --template=".env.example" --destination="$install_dir/.env"
 chmod 600 $install_dir/.env
