@@ -70,6 +70,15 @@ chmod 600 $install_dir/.env
 chown $app:www-data "$install_dir/.env"
 
 #=================================================
+# RUN MIGRATIONS
+#=================================================
+ynh_script_progression --message="Configuring $app database..." --weight=1
+
+pushd $install_dir
+  ynh_exec_warn_less ynh_exec_as $app php${phpversion} spark migrate --all
+popd
+
+#=================================================
 # END OF SCRIPT
 #=================================================
 
