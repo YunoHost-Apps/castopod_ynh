@@ -1,1 +1,4 @@
-* * * * * __APP__ /usr/bin/php__PHPVERSION__ __INSTALL_DIR__/spark tasks:run >> /dev/null 2>&1
+* * * * * __APP__ /usr/bin/php__PHPVERSION__ __INSTALL_DIR__/public/index.php scheduled-activities
+* * * * * __APP__ /usr/bin/php__PHPVERSION__ __INSTALL_DIR__/public/index.php scheduled-video-clips
+* * * * * __APP__ /usr/bin/php__PHPVERSION__ __INSTALL_DIR__/public/index.php scheduled-websub-publish
+
