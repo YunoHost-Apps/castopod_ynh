@@ -76,15 +76,6 @@ pushd $install_dir
 popd
 
 #=================================================
-# SETUP APPLICATION WITH CURL
-#=================================================
-ynh_script_progression --message="Finalizing installation..." --weight=1
-
-ynh_local_curl "/cp-install"
-
-ynh_local_curl "/cp-install/create-superadmin" "username=$admin" "email=$email" "password=$password"
-
-#=================================================
 # END OF SCRIPT
 #=================================================
 
