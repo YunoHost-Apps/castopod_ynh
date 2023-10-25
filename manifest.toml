@@ -47,7 +47,7 @@ ram.runtime = "50M"
         in_subdir = true
 
     [resources.system_user]
-    allow_email = true
+    #allow_email = true
 
     [resources.install_dir]
 
