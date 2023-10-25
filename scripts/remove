@@ -22,10 +22,6 @@ ynh_remove_nginx_config
 # Remove the dedicated PHP-FPM config
 ynh_remove_fpm_config
 
-#=================================================
-# REMOVE VARIOUS FILES
-#=================================================
-
 # Remove a cron file
 ynh_secure_remove --file="/etc/cron.d/$app"
 
