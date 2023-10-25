@@ -63,7 +63,7 @@ chown -R $app:www-data "$install_dir"
 ynh_script_progression --message="Updating a configuration file..." --weight=1
 
 # Create a dedicated PHP-FPM config
-ynh_add_fpm_config --usage=$fpm_usage --footprint=$fpm_footprint
+ynh_add_fpm_config --phpversion=$phpversion --usage=$fpm_usage --footprint=$fpm_footprint
 
 # Create a dedicated NGINX config
 ynh_add_nginx_config
@@ -73,22 +73,13 @@ chown root: "/etc/cron.d/$app"
 chmod 644 "/etc/cron.d/$app"
 
 #=================================================
-# ADD CONFIGURE
+# CONFIGURE CASTOPOD
 #=================================================
-ynh_script_progression --message="Configuring $app..." --weight=1
+# ynh_script_progression --message="Configuring Castopod..." --weight=1
 
-ynh_add_config --template="../conf/.env.example" --destination="$install_dir/.env"
-chmod 600 $install_dir/.env
-chown $app:www-data "$install_dir/.env"
-
-#=================================================
-# RUN MIGRATIONS
-#=================================================
-ynh_script_progression --message="Configuring $app database..." --weight=1
-
-pushd $install_dir
-  ynh_exec_warn_less ynh_exec_as $app php${phpversion} spark migrate --all
-popd
+# ynh_add_config --template="../conf/.env.example" --destination="$install_dir/.env"
+# chmod 600 $install_dir/.env
+# chown $app:www-data "$install_dir/.env"
 
 #=================================================
 # END OF SCRIPT
