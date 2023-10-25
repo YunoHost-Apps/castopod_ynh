@@ -37,6 +37,9 @@ ram.runtime = "50M"
     [install.admin]
     type = "user"
 
+    [install.password]
+    type = "password"
+    
 [resources]
 
     [resources.sources]
