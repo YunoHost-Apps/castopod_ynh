@@ -17,7 +17,7 @@ admindoc = "https://docs.castopod.org/"
 code = "https://code.castopod.org/adaures/castopod"
 
 [integration]
-yunohost = ">= 11.1.13"
+yunohost = ">= 11.2"
 architectures = "all"
 multi_instance = true
 ldap = false
@@ -48,7 +48,7 @@ ram.runtime = "50M"
     main.url = "/"
 
     [resources.apt]
-    packages = "mariadb-server ffmpeg php8.1-fpm php8.1-mysql php8.1-gd php8.1-intl php8.1-curl php8.1-mbstring php8.1-xml php8.1-mysqlnd"
+    packages = "mariadb-server, ffmpeg, php8.2-mysql, php8.2-gd, php8.2-intl, php8.2-curl, php8.2-mbstring, php8.2-xml, php8.2-mysqlnd"
 
     [resources.database]
     type = "mysql"
