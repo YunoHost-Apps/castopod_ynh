@@ -49,8 +49,6 @@ if [ "$upgrade_type" == "UPGRADE_APP" ]
 then
 	ynh_script_progression --message="Upgrading source files..." --weight=1
 
-	ynh_secure_remove --file="$install_dir/app"
-	ynh_secure_remove --file="$install_dir/public/assets"
 	# Download, check integrity, uncompress and patch the source from app.src
 	ynh_setup_source --dest_dir="$install_dir" --keep=".env"
 fi
