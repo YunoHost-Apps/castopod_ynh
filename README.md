@@ -45,6 +45,7 @@ Castopod is easy to install and was built on top of CodeIgniter4, a powerful PHP
 * Official app website: <https://castopod.org/>
 * Official admin documentation: <https://docs.castopod.org/>
 * Upstream app code repository: <https://code.castopod.org/adaures/castopod>
+* YunoHost Store: <https://apps.yunohost.org/app/castopod>
 * Report a bug: <https://github.com/YunoHost-Apps/castopod_ynh/issues>
 
 ## Developer info
