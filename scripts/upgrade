@@ -89,6 +89,13 @@ pushd $install_dir
   ynh_exec_warn_less ynh_exec_as $app php${phpversion} spark cache:clear
 popd
 
+if [ $(ynh_compare_current_package_version --comparison le --version "1.1.2~ynh2") ]; then
+    ynh_script_progression --message="Moving data..." --weight=3
+    mv $install_dir/public/media $data_dir
+    chmod -R 644 $data_dir
+    chgrp -R www-data $data_dir
+endif
+
 #=================================================
 # END OF SCRIPT
 #=================================================
