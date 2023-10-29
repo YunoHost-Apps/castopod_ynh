@@ -69,8 +69,8 @@ ynh_add_config --template=".env.example" --destination="$install_dir/.env"
 chmod 600 $install_dir/.env
 chown $app:www-data "$install_dir/.env"
 
-mkdir -p $data_dir/media
-chmod -R 644 $data_dir
+mv $install_dir/public/media $data_dir
+chmod -R 750 $data_dir
 chgrp -R www-data $data_dir
 
 #=================================================

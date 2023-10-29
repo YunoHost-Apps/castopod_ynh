@@ -45,7 +45,7 @@ fi
 if ynh_compare_current_package_version --comparison le --version "1.1.2~ynh2"; then
     ynh_script_progression --message="Moving data..." --weight=3
     mv $install_dir/public/media $data_dir
-    chmod -R 644 $data_dir
+    chmod -R 750 $data_dir
     chgrp -R www-data $data_dir
 
     ynh_script_progression --message="Fixing migrations..." --weight=1
@@ -105,9 +105,9 @@ popd
 
 if ynh_compare_current_package_version --comparison le --version "1.6.5~ynh1"; then
     # cf https://code.castopod.org/adaures/castopod/-/releases/v1.5.2
-    ynh_mysql_connect_as --user=$db_user --password=$db_pwd --database=$db_name < "../conf/v1.5.2.sql"
+    ynh_mysql_connect_as --user=$db_user --password=$db_pwd --database=$db_name < "../conf/sql/v1.5.2.sql"
     # cf https://code.castopod.org/adaures/castopod/-/releases/v1.6.1
-    ynh_mysql_connect_as --user=$db_user --password=$db_pwd --database=$db_name < "../conf/v1.6.1.sql"
+    ynh_mysql_connect_as --user=$db_user --password=$db_pwd --database=$db_name < "../conf/sql/v1.6.1.sql"
 fi
 
 #=================================================
