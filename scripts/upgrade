@@ -49,7 +49,7 @@ if ynh_compare_current_package_version --comparison le --version "1.1.2~ynh2"; t
     chgrp -R www-data $data_dir
 
     ynh_script_progression --message="Fixing migrations..." --weight=1
-    ynh_mysql_execute_as_root --database=$db_name --sql="UPDATE cp_migrations SET class='Media\\Database\\Migrations\\AddMedia', namespace='Media' where class='App\\Database\\Migrations\\AddMedia'"
+    ynh_mysql_execute_as_root --database=$db_name --sql="UPDATE cp_migrations SET class='Media\\\\Database\\\\Migrations\\\\AddMedia', namespace='Media' where class='App\\\\Database\\\\Migrations\\\\AddMedia'"
 fi
 
 #=================================================
