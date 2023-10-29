@@ -47,7 +47,7 @@ if [ $(ynh_compare_current_package_version --comparison le --version "1.1.2~ynh2
     mv $install_dir/public/media $data_dir
     chmod -R 644 $data_dir
     chgrp -R www-data $data_dir
-endif
+fi
 
 #=================================================
 # DOWNLOAD, CHECK AND UNPACK SOURCE
