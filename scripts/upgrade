@@ -45,7 +45,7 @@ fi
 if ynh_compare_current_package_version --comparison le --version "1.1.2~ynh2"; then
     ynh_script_progression --message="Moving data..." --weight=3
     mkdir -p $data_dir/media
-    cp -rf $install_dir/public/media/* $data_dir/media/*
+    cp -rf $install_dir/public/media/* $data_dir/media
     chmod -R 750 $data_dir
     chgrp -R www-data $data_dir
 
