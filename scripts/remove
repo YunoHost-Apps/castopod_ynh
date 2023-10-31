@@ -10,13 +10,6 @@ source _common.sh
 source /usr/share/yunohost/helpers
 
 #=================================================
-# LOAD SETTINGS
-#=================================================
-# ynh_script_progression --message="Loading installation settings..." --weight=1
-
-# redis_db=$(ynh_app_setting_get --app=$app --key=redis_db)
-
-#=================================================
 # REMOVE THE REDIS DATABASE
 #=================================================
 ynh_script_progression --message="Removing Redis database..." --weight=1
@@ -28,10 +21,6 @@ ynh_remove_nginx_config
 
 # Remove the dedicated PHP-FPM config
 ynh_remove_fpm_config
-
-#=================================================
-# REMOVE VARIOUS FILES
-#=================================================
 
 # Remove a cron file
 ynh_secure_remove --file="/etc/cron.d/$app"

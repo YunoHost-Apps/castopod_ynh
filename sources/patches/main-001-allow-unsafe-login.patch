@@ -1,0 +1,12 @@
+diff -ruN castopod.old/vendor/codeigniter4/shield/src/Config/Auth.php castopod/vendor/codeigniter4/shield/src/Config/Auth.php
+--- castopod.old/vendor.old/codeigniter4/shield/src/Config/Auth.php	2023-10-31 13:05:34
++++ castopod/vendor/codeigniter4/shield/src/Config/Auth.php	2023-10-31 12:57:04
+@@ -375,7 +375,7 @@
+      *
+      * @deprecated This is only for backward compatibility.
+      */
+-    public bool $supportOldDangerousPassword = false;
++    public bool $supportOldDangerousPassword = true;
+ 
+     /**
+      * ////////////////////////////////////////////////////////////////////

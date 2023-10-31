@@ -39,6 +39,24 @@ if [ -z "${fpm_usage:-}" ]; then
 fi
 
 #=================================================
+# MOVE DATA TO __DATA_DIR__
+#=================================================
+
+if ynh_compare_current_package_version --comparison le --version "1.1.2~ynh2"; then
+    ynh_script_progression --message="Moving data..." --weight=3
+    mkdir -p $data_dir/media
+    cp -rf $install_dir/public/media/* $data_dir/media
+    chmod -R 750 $data_dir
+    chgrp -R www-data $data_dir
+
+    ynh_secure_remove --file="$install_dir/public/media"
+
+    ynh_script_progression --message="Fixing migrations..." --weight=1
+    # this will fail is `cp-install` was not run on prev version - just ignore, DB schema is (re)generated later.
+    ynh_mysql_execute_as_root --database=$db_name --sql="UPDATE cp_migrations SET class='Media\\\\Database\\\\Migrations\\\\AddMedia', namespace='Media' where class='App\\\\Database\\\\Migrations\\\\AddMedia'" || true
+fi
+
+#=================================================
 # DOWNLOAD, CHECK AND UNPACK SOURCE
 #=================================================
 
@@ -46,10 +64,8 @@ if [ "$upgrade_type" == "UPGRADE_APP" ]
 then
 	ynh_script_progression --message="Upgrading source files..." --weight=1
 
-	ynh_secure_remove --file="$install_dir/app"
-	ynh_secure_remove --file="$install_dir/public/assets"
 	# Download, check integrity, uncompress and patch the source from app.src
-	ynh_setup_source --dest_dir="$install_dir" --keep=".env"
+	ynh_setup_source --dest_dir="$install_dir" --full_replace=1
 fi
 
 chmod -R o-rwx "$install_dir"
@@ -63,23 +79,40 @@ chown -R $app:www-data "$install_dir"
 ynh_script_progression --message="Updating a configuration file..." --weight=1
 
 # Create a dedicated PHP-FPM config
-ynh_add_fpm_config --phpversion=$phpversion --usage=$fpm_usage --footprint=$fpm_footprint
+ynh_add_fpm_config --usage=$fpm_usage --footprint=$fpm_footprint
 
 # Create a dedicated NGINX config
 ynh_add_nginx_config
 
-ynh_add_config --template="../conf/cron" --destination="/etc/cron.d/$app"
+ynh_add_config --template="cron" --destination="/etc/cron.d/$app"
 chown root: "/etc/cron.d/$app"
 chmod 644 "/etc/cron.d/$app"
 
 #=================================================
 # CONFIGURE CASTOPOD
 #=================================================
-# ynh_script_progression --message="Configuring Castopod..." --weight=1
+ynh_script_progression --message="Configuring $app..." --weight=1
 
-# ynh_add_config --template="../conf/.env.example" --destination="$install_dir/.env"
-# chmod 600 $install_dir/.env
-# chown $app:www-data "$install_dir/.env"
+ynh_add_config --template=".env.example" --destination="$install_dir/.env"
+chmod 600 $install_dir/.env
+chown $app:www-data "$install_dir/.env"
+
+#=================================================
+# RUN MIGRATIONS
+#=================================================
+ynh_script_progression --message="Configuring $app database..." --weight=1
+
+pushd $install_dir
+  ynh_exec_warn_less ynh_exec_as $app php${phpversion} spark cache:clear
+  ynh_exec_warn_less ynh_exec_as $app php${phpversion} spark castopod:database-update
+popd
+
+if ynh_compare_current_package_version --comparison le --version "1.6.5~ynh1"; then
+    # cf https://code.castopod.org/adaures/castopod/-/releases/v1.5.2
+    ynh_mysql_connect_as --user=$db_user --password=$db_pwd --database=$db_name < "../conf/sql/v1.5.2.sql"
+    # cf https://code.castopod.org/adaures/castopod/-/releases/v1.6.1
+    ynh_mysql_connect_as --user=$db_user --password=$db_pwd --database=$db_name < "../conf/sql/v1.6.1.sql"
+fi
 
 #=================================================
 # END OF SCRIPT
