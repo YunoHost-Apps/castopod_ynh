@@ -69,13 +69,21 @@ ynh_add_config --template=".env.example" --destination="$install_dir/.env"
 chmod 600 $install_dir/.env
 chown $app:www-data "$install_dir/.env"
 
+mkdir -p $data_dir/media
+cp -rf $install_dir/public/media/* $data_dir/media
+chmod -R 750 $data_dir
+chgrp -R www-data $data_dir
+
+ynh_secure_remove --file="$install_dir/public/media" 
+
 #=================================================
 # RUN MIGRATIONS
 #=================================================
 ynh_script_progression --message="Configuring $app database..." --weight=1
 
 pushd $install_dir
-  ynh_exec_warn_less ynh_exec_as $app php${phpversion} spark migrate --all
+  ynh_exec_warn_less ynh_exec_as $app php${phpversion} spark castopod:database-update
+  ynh_exec_warn_less ynh_exec_as $app php${phpversion} spark db:seed AppSeeder
 popd
 
 #=================================================
