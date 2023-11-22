@@ -54,6 +54,8 @@ if ynh_compare_current_package_version --comparison le --version "1.1.2~ynh2"; t
     ynh_script_progression --message="Fixing migrations..." --weight=1
     # this will fail is `cp-install` was not run on prev version - just ignore, DB schema is (re)generated later.
     ynh_mysql_execute_as_root --database=$db_name --sql="UPDATE cp_migrations SET class='Media\\\\Database\\\\Migrations\\\\AddMedia', namespace='Media' where class='App\\\\Database\\\\Migrations\\\\AddMedia'" || true
+elif ynh_compare_current_package_version --comparison lt --version "1.6.5~ynh2"; then
+    chown -R $app:www-data $data_dir
 fi
 
 #=================================================
