@@ -5,7 +5,7 @@ name = "Castopod"
 description.en = "Hosting platform made for podcasters"
 description.fr = "Plateforme d'hébergement conçue pour les podcasteurs"
 
-version = "1.6.5~ynh2"
+version = "1.7.1~ynh2"
 
 maintainers = ["eric_G"]
 
@@ -50,6 +50,7 @@ ram.runtime = "50M"
 
     [resources.data_dir]
     subdirs = ["media"]
+    group = "www-data:rx"
 
     [resources.permissions]
     main.url = "/"
