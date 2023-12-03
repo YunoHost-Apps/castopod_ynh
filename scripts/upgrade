@@ -62,7 +62,7 @@ fi
 # DOWNLOAD, CHECK AND UNPACK SOURCE
 #=================================================
 
-if [ "$upgrade_type" == "UPGRADE_APP" ||  $(ynh_compare_current_package_version --comparison le --version "1.7.1~ynh2")]
+if [ "$upgrade_type" == "UPGRADE_APP" ] || ynh_compare_current_package_version --comparison le --version "1.7.1~ynh2"
 then
 	ynh_script_progression --message="Upgrading source files..." --weight=1
 
