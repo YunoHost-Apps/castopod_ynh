@@ -13,7 +13,7 @@ source /usr/share/yunohost/helpers
 # CHECK VERSION
 #=================================================
 
-upgrade_type=$(ynh_check_app_version_changed) 
+upgrade_type=$(ynh_check_app_version_changed)
 
 #=================================================
 # ENSURE DOWNWARD COMPATIBILITY
@@ -61,6 +61,8 @@ fi
 #=================================================
 # DOWNLOAD, CHECK AND UNPACK SOURCE
 #=================================================
+
+# 1.7.1~ynh2 accidently shipped 1.6.5, force upgrade on that version even if it's theoretically the same upstream release
 
 if [ "$upgrade_type" == "UPGRADE_APP" ] || ynh_compare_current_package_version --comparison eq --version "1.7.1~ynh2"
 then
