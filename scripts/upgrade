@@ -62,7 +62,9 @@ fi
 # DOWNLOAD, CHECK AND UNPACK SOURCE
 #=================================================
 
-if [ "$upgrade_type" == "UPGRADE_APP" ]
+# 1.7.1~ynh2 accidently shipped 1.6.5, force upgrade on that version even if it's theoretically the same upstream release
+
+if [ "$upgrade_type" == "UPGRADE_APP" ] || ynh_compare_current_package_version --comparison eq --version "1.7.1~ynh2"
 then
 	ynh_script_progression --message="Upgrading source files..." --weight=1
 
