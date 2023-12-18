@@ -38,6 +38,13 @@ if [ -z "${fpm_usage:-}" ]; then
     ynh_app_setting_set --app=$app --key=fpm_usage --value=$fpm_usage
 fi
 
+# If redis_db doesn't exist, create it
+if [ -z "${redis_db:-}" ]; then
+    # Configure redis
+    redis_db=$(ynh_redis_get_free_db)
+    ynh_app_setting_set --app="$app" --key=redis_db --value="$redis_db"
+fi
+
 #=================================================
 # MOVE DATA TO __DATA_DIR__
 #=================================================
