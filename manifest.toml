@@ -44,6 +44,8 @@ ram.runtime = "50M"
         [resources.sources.main]
         url = "https://code.castopod.org/adaures/castopod/uploads/c2a4216026fd78c02d5ec53ab7738085/castopod-1.8.2.zip"
         sha256 = "e0add6f37ae6cd9ef8b5c519f8c886fb64e90d36f6781a08b315acfbc6ebfd7e"
+        autoupdate.strategy = "latest_gitlab_release"
+        autoupdate.asset = "Castopod Package \\(zip\\)"
         in_subdir = true
 
     [resources.system_user]
