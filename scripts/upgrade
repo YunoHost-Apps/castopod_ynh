@@ -129,8 +129,12 @@ if ynh_compare_current_package_version --comparison lt --version "1.7.3~ynh1"; t
     ynh_mysql_connect_as --user=$db_user --password=$db_pwd --database=$db_name < "../conf/sql/v1.7.3.sql"
 fi
 if ynh_compare_current_package_version --comparison lt --version "1.8.2~ynh1"; then
-    # cf https://code.castopod.org/adaures/castopod/-/releases/v1.7.3
+    # cf https://code.castopod.org/adaures/castopod/-/releases/v1.8.2
     ynh_mysql_connect_as --user=$db_user --password=$db_pwd --database=$db_name < "../conf/sql/v1.8.0.sql"
+fi
+if ynh_compare_current_package_version --comparison lt --version "1.10.5~ynh1"; then
+    # cf https://code.castopod.org/adaures/castopod/-/releases/v1.10.5
+    ynh_mysql_connect_as --user=$db_user --password=$db_pwd --database=$db_name < "../conf/sql/v1.10.5.sql"
 fi
 
 #=================================================
