@@ -136,6 +136,10 @@ if ynh_compare_current_package_version --comparison lt --version "1.10.5~ynh1"; 
     # cf https://code.castopod.org/adaures/castopod/-/releases/v1.10.5
     ynh_mysql_connect_as --user=$db_user --password=$db_pwd --database=$db_name < "../conf/sql/v1.10.5.sql"
 fi
+if ynh_compare_current_package_version --comparison lt --version "1.11.0~ynh1"; then
+    # cf https://code.castopod.org/adaures/castopod/-/releases/v1.11.0
+    ynh_mysql_connect_as --user=$db_user --password=$db_pwd --database=$db_name < "../conf/sql/v1.11.0.sql"
+fi
 
 #=================================================
 # END OF SCRIPT
