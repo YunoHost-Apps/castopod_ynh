@@ -17,7 +17,7 @@ admindoc = "https://docs.castopod.org/"
 code = "https://code.castopod.org/adaures/castopod"
 
 [integration]
-yunohost = ">= 11.2"
+yunohost = ">= 11.2.12"
 architectures = "all"
 multi_instance = true
 
