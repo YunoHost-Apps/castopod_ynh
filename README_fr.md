@@ -5,7 +5,7 @@ Il NE doit PAS être modifié à la main.
 
 # Castopod pour YunoHost
 
-[![Niveau d’intégration](https://dash.yunohost.org/integration/castopod.svg)](https://dash.yunohost.org/appci/app/castopod) ![Statut du fonctionnement](https://ci-apps.yunohost.org/ci/badges/castopod.status.svg) ![Statut de maintenance](https://ci-apps.yunohost.org/ci/badges/castopod.maintain.svg)
+[![Niveau d’intégration](https://dash.yunohost.org/integration/castopod.svg)](https://ci-apps.yunohost.org/ci/apps/castopod/) ![Statut du fonctionnement](https://ci-apps.yunohost.org/ci/badges/castopod.status.svg) ![Statut de maintenance](https://ci-apps.yunohost.org/ci/badges/castopod.maintain.svg)
 
 [![Installer Castopod avec YunoHost](https://install-app.yunohost.org/install-with-yunohost.svg)](https://install-app.yunohost.org/?app=castopod)
 
@@ -31,7 +31,7 @@ Castopod est une plate-forme d'hébergement gratuite et open source conçue pour
 - Multi-locataire : hébergez autant de podcasts que vous le souhaitez
 - Multi-utilisateur : ajouter des contributeurs et définir des rôles
 
-**Version incluse :** 1.11.0~ynh1
+**Version incluse :** 1.12.0~ynh1
 
 **Démo :** <https://podcast.podlibre.org/@podlibre_fr>
 
