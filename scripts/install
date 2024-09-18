@@ -6,23 +6,6 @@ source /usr/share/yunohost/helpers
 ynh_app_setting_set --key=php_upload_max_filesize --value=512M
 
 #=================================================
-# RETRIEVE ARGUMENTS FROM THE MANIFEST
-#=================================================
-
-#REMOVEME? Everything about fpm_footprint is removed in helpers2.1... | fpm_footprint="low"
-#REMOVEME? Everything about fpm_free_footprint is removed in helpers2.1... | fpm_free_footprint=0
-#REMOVEME? Everything about fpm_usage is removed in helpers2.1... | fpm_usage="low"
-
-#=================================================
-# STORE SETTINGS FROM MANIFEST
-#=================================================
-ynh_script_progression "Storing installation settings..."
-
-#REMOVEME? Everything about fpm_footprint is removed in helpers2.1... | ynh_app_setting_set --key=fpm_footprint --value=$fpm_footprint
-#REMOVEME? Everything about fpm_free_footprint is removed in helpers2.1... | ynh_app_setting_set --key=fpm_free_footprint --value=$fpm_free_footprint
-#REMOVEME? Everything about fpm_usage is removed in helpers2.1... | ynh_app_setting_set --key=fpm_usage --value=$fpm_usage
-
-#=================================================
 # DOWNLOAD, CHECK AND UNPACK SOURCE
 #=================================================
 ynh_script_progression "Setting up source files..."
@@ -30,8 +13,6 @@ ynh_script_progression "Setting up source files..."
 # Download, check integrity, uncompress and patch the source from app.src
 ynh_setup_source --dest_dir="$install_dir"
 
-#REMOVEME? Assuming the install dir is setup using ynh_setup_source, the proper chmod/chowns are now already applied and it shouldn't be necessary to tweak perms | chmod -R o-rwx "$install_dir"
-#REMOVEME? Assuming the install dir is setup using ynh_setup_source, the proper chmod/chowns are now already applied and it shouldn't be necessary to tweak perms | chown -R $app:www-data "$install_dir"
 #=================================================
 # SYSTEM CONFIGURATION
 #=================================================
@@ -44,8 +25,6 @@ ynh_config_add_phpfpm
 ynh_config_add_nginx
 
 ynh_config_add --template="cron" --destination="/etc/cron.d/$app"
-#REMOVEME? Assuming the file is setup using ynh_config_add, the proper chmod/chowns are now already applied and it shouldn't be necessary to tweak perms | chown root: "/etc/cron.d/$app"
-#REMOVEME? Assuming the file is setup using ynh_config_add, the proper chmod/chowns are now already applied and it shouldn't be necessary to tweak perms | chmod 644 "/etc/cron.d/$app"
 
 #=================================================
 # SPECIFIC SETUP
@@ -58,11 +37,7 @@ ynh_script_progression "Configuring Castopod..."
 redis_db=$(ynh_redis_get_free_db)
 ynh_app_setting_set --key=redis_db --value="$redis_db"
 
-#redis_number=$(( $YNH_APP_INSTANCE_NUMBER - 1 ))
 ynh_config_add --template=".env.example" --destination="$install_dir/.env"
-
-#REMOVEME? Assuming the file is setup using ynh_config_add, the proper chmod/chowns are now already applied and it shouldn't be necessary to tweak perms | chmod 600 $install_dir/.env
-#REMOVEME? Assuming the file is setup using ynh_config_add, the proper chmod/chowns are now already applied and it shouldn't be necessary to tweak perms | chown $app:www-data "$install_dir/.env"
 
 mkdir -p $data_dir/media
 cp -rf $install_dir/public/media/* $data_dir/media
