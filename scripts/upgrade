@@ -50,7 +50,7 @@ if ynh_app_upgrading_from_version_before_or_equal_to 1.1.2~ynh2; then
 
     ynh_script_progression "Fixing migrations..."
     # this will fail is `cp-install` was not run on prev version - just ignore, DB schema is (re)generated later.
-    ynh_psql_db_shell  <<< "UPDATE cp_migrations SET class='Media\\\\Database\\\\Migrations\\\\AddMedia', namespace='Media' where class='App\\\\Database\\\\Migrations\\\\AddMedia'" || true
+    ynh_mysql_db_shell  <<< "UPDATE cp_migrations SET class='Media\\\\Database\\\\Migrations\\\\AddMedia', namespace='Media' where class='App\\\\Database\\\\Migrations\\\\AddMedia'" || true
 elif ynh_app_upgrading_from_version_before 1.6.5~ynh2; then
     chown -R $app:www-data $data_dir
 fi
