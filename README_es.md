@@ -50,7 +50,7 @@ Castopod is easy to install and was built on top of CodeIgniter4, a powerful PHP
 
 ## Información para desarrolladores
 
-Por favor enviar sus correcciones a la [`branch testing`](https://github.com/YunoHost-Apps/castopod_ynh/tree/testing
+Por favor enviar sus correcciones a la [rama `testing`](https://github.com/YunoHost-Apps/castopod_ynh/tree/testing).
 
 Para probar la rama `testing`, sigue asÍ:
 
