@@ -32,7 +32,7 @@ Castopod is easy to install and was built on top of CodeIgniter4, a powerful PHP
 - Multi-tenant: host as many podcasts as you want
 - Multi-user: add contributors and set roles
 
-**Versión actual:** 1.12.9~ynh1
+**Versión actual:** 1.12.10~ynh1
 
 **Demo:** <https://podcast.podlibre.org/@podlibre_fr>
 
@@ -50,7 +50,7 @@ Castopod is easy to install and was built on top of CodeIgniter4, a powerful PHP
 
 ## Información para desarrolladores
 
-Por favor enviar sus correcciones a la [`branch testing`](https://github.com/YunoHost-Apps/castopod_ynh/tree/testing
+Por favor enviar sus correcciones a la [rama `testing`](https://github.com/YunoHost-Apps/castopod_ynh/tree/testing).
 
 Para probar la rama `testing`, sigue asÍ:
 

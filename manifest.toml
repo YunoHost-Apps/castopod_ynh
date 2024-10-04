@@ -5,7 +5,7 @@ name = "Castopod"
 description.en = "Hosting platform made for podcasters"
 description.fr = "Plateforme d'hébergement conçue pour les podcasteurs"
 
-version = "1.12.9~ynh1"
+version = "1.12.10~ynh1"
 
 maintainers = ["orhtej2"]
 
@@ -17,7 +17,8 @@ admindoc = "https://docs.castopod.org/"
 code = "https://code.castopod.org/adaures/castopod"
 
 [integration]
-yunohost = ">= 11.2.12"
+yunohost = ">= 11.2.18"
+helpers_version = "2.1"
 architectures = "all"
 multi_instance = true
 
@@ -42,8 +43,8 @@ ram.runtime = "50M"
     [resources.sources]
 
         [resources.sources.main]
-        url = "https://code.castopod.org/-/project/2/uploads/cc9e9e62dfc16413c160cc6fe0fa35bf/castopod-1.12.9.zip"
-        sha256 = "407cf8e3fdf68288e01bb38cf85d2c3e42db2b19065472f36f21996334455497"
+        url = "https://code.castopod.org/-/project/2/uploads/e6876b17df17c8ca9e557edbcc222876/castopod-1.12.10.zip"
+        sha256 = "56f64d598fbb1fe1b9e7c62f138089868346768ebdca841328f237c4967746f4"
         autoupdate.strategy = "latest_gitlab_release"
         autoupdate.asset = "Castopod Package \\(zip\\)"
         in_subdir = true
@@ -52,6 +53,7 @@ ram.runtime = "50M"
     allow_email = true
 
     [resources.install_dir]
+    group = "www-data:r-x"
 
     [resources.data_dir]
     subdirs = ["media"]
