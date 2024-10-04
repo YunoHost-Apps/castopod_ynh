@@ -1,6 +1,5 @@
 #!/bin/bash
 
-# Keep this path for calling _common.sh inside the execution's context of backup and restore scripts
 source ../settings/scripts/_common.sh
 source /usr/share/yunohost/helpers
 
@@ -28,8 +27,6 @@ ynh_script_progression "Restoring the MySQL database..."
 
 ynh_mysql_db_shell < ./db.sql
 
-#=================================================
-# RESTORE SYSTEM CONFIGURATIONS
 #=================================================
 # RESTORE THE PHP-FPM CONFIGURATION
 #=================================================

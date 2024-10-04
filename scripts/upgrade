@@ -40,23 +40,17 @@ fi
 #=================================================
 # DOWNLOAD, CHECK AND UNPACK SOURCE
 #=================================================
-
 ynh_script_progression "Upgrading source files..."
 
-# Download, check integrity, uncompress and patch the source from app.src
 ynh_setup_source --dest_dir="$install_dir" --full_replace
 
-#=================================================
-# RECONFIGURE THE APP (UPDATE CONF, APPLY MIGRATIONS...)
 #=================================================
 # UPDATE A CONFIG FILE
 #=================================================
 ynh_script_progression "Updating configuration..."
 
-# Create a dedicated PHP-FPM config
 ynh_config_add_phpfpm
 
-# Create a dedicated NGINX config
 ynh_config_add_nginx
 
 ynh_config_add --template="cron" --destination="/etc/cron.d/$app"
