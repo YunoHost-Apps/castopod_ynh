@@ -10,13 +10,10 @@ ynh_script_progression "Removing Redis database..."
 
 ynh_redis_remove_db "$redis_db"
 
-# Remove the dedicated NGINX config
 ynh_config_remove_nginx
 
-# Remove the dedicated PHP-FPM config
 ynh_config_remove_phpfpm
 
-# Remove a cron file
 ynh_safe_rm "/etc/cron.d/$app"
 
 #=================================================
