@@ -1,4 +1,4 @@
-packaging_format = 2
+ńpackaging_format = 2
 
 id = "castopod"
 name = "Castopod"
@@ -63,7 +63,7 @@ ram.runtime = "50M"
     main.url = "/"
 
     [resources.apt]
-    packages = "mariadb-server, ffmpeg, php8.2-mysql, php8.2-gd, php8.2-intl, php8.2-curl, php8.2-mbstring, php8.2-xml, php8.2-mysqlnd, redis-server"
+    packages = "mariadb-server, mariadb-client, ffmpeg, php8.2-mysql, php8.2-gd, php8.2-intl, php8.2-curl, php8.2-mbstring, php8.2-xml, php8.2-mysqlnd, redis-server"
 
     [resources.database]
     type = "mysql"
