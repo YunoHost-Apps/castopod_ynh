@@ -5,7 +5,9 @@
 
 # YunoHost 上的 Castopod
 
-[![集成程度](https://dash.yunohost.org/integration/castopod.svg)](https://ci-apps.yunohost.org/ci/apps/castopod/) ![工作状态](https://ci-apps.yunohost.org/ci/badges/castopod.status.svg) ![维护状态](https://ci-apps.yunohost.org/ci/badges/castopod.maintain.svg)
+[![集成程度](https://apps.yunohost.org/badge/integration/castopod)](https://ci-apps.yunohost.org/ci/apps/castopod/)
+![工作状态](https://apps.yunohost.org/badge/state/castopod)
+![维护状态](https://apps.yunohost.org/badge/maintained/castopod)
 
 [![使用 YunoHost 安装 Castopod](https://install-app.yunohost.org/install-with-yunohost.svg)](https://install-app.yunohost.org/?app=castopod)
 
@@ -32,7 +34,7 @@ Castopod is easy to install and was built on top of CodeIgniter4, a powerful PHP
 - Multi-tenant: host as many podcasts as you want
 - Multi-user: add contributors and set roles
 
-**分发版本：** 1.13.0~ynh1
+**分发版本：** 1.13.1~ynh1
 
 **演示：** <https://podcast.podlibre.org/@podlibre_fr>
 
