@@ -5,7 +5,9 @@ Ini TIDAK boleh diedit dengan tangan.
 
 # Castopod untuk YunoHost
 
-[![Tingkat integrasi](https://dash.yunohost.org/integration/castopod.svg)](https://ci-apps.yunohost.org/ci/apps/castopod/) ![Status kerja](https://ci-apps.yunohost.org/ci/badges/castopod.status.svg) ![Status pemeliharaan](https://ci-apps.yunohost.org/ci/badges/castopod.maintain.svg)
+[![Tingkat integrasi](https://apps.yunohost.org/badge/integration/castopod)](https://ci-apps.yunohost.org/ci/apps/castopod/)
+![Status kerja](https://apps.yunohost.org/badge/state/castopod)
+![Status pemeliharaan](https://apps.yunohost.org/badge/maintained/castopod)
 
 [![Pasang Castopod dengan YunoHost](https://install-app.yunohost.org/install-with-yunohost.svg)](https://install-app.yunohost.org/?app=castopod)
 
@@ -32,7 +34,7 @@ Castopod is easy to install and was built on top of CodeIgniter4, a powerful PHP
 - Multi-tenant: host as many podcasts as you want
 - Multi-user: add contributors and set roles
 
-**Versi terkirim:** 1.13.0~ynh1
+**Versi terkirim:** 1.13.1~ynh1
 
 **Demo:** <https://podcast.podlibre.org/@podlibre_fr>
 
