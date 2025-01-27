@@ -5,7 +5,7 @@ name = "Castopod"
 description.en = "Hosting platform made for podcasters"
 description.fr = "Plateforme d'hébergement conçue pour les podcasteurs"
 
-version = "1.13.3~ynh1"
+version = "1.13.3~ynh2"
 
 maintainers = ["orhtej2"]
 
@@ -23,7 +23,6 @@ architectures = "all"
 multi_instance = true
 
 ldap = false
-
 sso = false
 
 disk = "50M"
