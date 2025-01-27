@@ -34,7 +34,7 @@ Castopod is easy to install and was built on top of CodeIgniter4, a powerful PHP
 - Multi-tenant: host as many podcasts as you want
 - Multi-user: add contributors and set roles
 
-**Поставляемая версия:** 1.13.3~ynh1
+**Поставляемая версия:** 1.13.3~ynh2
 
 **Демо-версия:** <https://podcast.podlibre.org/@podlibre_fr>
 
