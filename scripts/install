@@ -12,7 +12,6 @@ ynh_app_setting_set --key=php_post_max_filesize --value=512M
 #=================================================
 ynh_script_progression "Setting up source files..."
 
-# Download, check integrity, uncompress and patch the source from app.src
 ynh_setup_source --dest_dir="$install_dir"
 
 #=================================================
