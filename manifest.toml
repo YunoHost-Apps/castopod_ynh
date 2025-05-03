@@ -62,7 +62,7 @@ ram.runtime = "50M"
     main.url = "/"
 
     [resources.apt]
-    packages = "mariadb-server, mariadb-client, ffmpeg, php8.4-mysql, php8.4-gd, php8.4-intl, php8.4-curl, php8.4-mbstring, php8.4-xml, php8.4-mysqlnd, redis-server"
+    packages = "mariadb-server, mariadb-client, ffmpeg, php8.2-mysql, php8.2-gd, php8.2-intl, php8.2-curl, php8.2-mbstring, php8.2-xml, php8.2-mysqlnd, redis-server"
 
     [resources.database]
     type = "mysql"
