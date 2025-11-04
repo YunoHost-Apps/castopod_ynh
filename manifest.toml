@@ -1,3 +1,5 @@
+#:schema https://raw.githubusercontent.com/YunoHost/apps/master/schemas/manifest.v2.schema.json
+
 packaging_format = 2
 
 id = "castopod"
@@ -5,7 +7,7 @@ name = "Castopod"
 description.en = "Hosting platform made for podcasters"
 description.fr = "Plateforme d'hébergement conçue pour les podcasteurs"
 
-version = "1.13.5~ynh1"
+version = "1.13.7~ynh1"
 
 maintainers = ["orhtej2"]
 
@@ -42,8 +44,8 @@ ram.runtime = "50M"
     [resources.sources]
 
         [resources.sources.main]
-        url = "https://code.castopod.org/-/project/2/uploads/f113e0feb39d129758629e3ea629d704/castopod-1.13.5.zip"
-        sha256 = "565641d822351330e454f526b1e1bffed1f1ad0deae44e561da3bbbcc35836f5"
+        url = "https://code.castopod.org/-/project/2/uploads/0ebef95faed09caf3486cb28a00c6c68/castopod-1.13.7.zip"
+        sha256 = "6353f627f7cbac5c870cf54b972e38eb76af20ffbaf2b39d92ca29e6e2dd7a00"
         autoupdate.strategy = "latest_gitlab_release"
         autoupdate.asset = "Castopod Package \\(zip\\)"
         in_subdir = true
@@ -60,6 +62,11 @@ ram.runtime = "50M"
 
     [resources.permissions]
     main.url = "/"
+    main.auth_header = false
+    api.url = "/api"
+    api.auth_header = false
+    api.show_tile = false
+    api.allowed = "visitors"
 
     [resources.apt]
     packages = "mariadb-server, mariadb-client, ffmpeg, php8.2-mysql, php8.2-gd, php8.2-intl, php8.2-curl, php8.2-mbstring, php8.2-xml, php8.2-mysqlnd, redis-server"
