@@ -38,6 +38,10 @@ if ynh_app_upgrading_from_version_before_or_equal_to 1.1.2~ynh2; then
     ynh_mysql_db_shell  <<< "UPDATE cp_migrations SET class='Media\\\\Database\\\\Migrations\\\\AddMedia', namespace='Media' where class='App\\\\Database\\\\Migrations\\\\AddMedia'" || true
 elif ynh_app_upgrading_from_version_before 1.6.5~ynh2; then
     chown -R $app:www-data $data_dir
+elif ynh_app_upgrading_from_version_before 1.14.1~ynh2; then
+    # purge all the session from old versions that did non run session GC automatically
+    ynh_hide_warnings ynh_exec_as_app php${php_version} spark cache:clear
+    ynh_exec_as_app find $install_dir/writable/session -type f -delete
 fi
 
 #=================================================
