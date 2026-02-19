@@ -7,7 +7,7 @@ name = "Castopod"
 description.en = "Hosting platform made for podcasters"
 description.fr = "Plateforme d'hébergement conçue pour les podcasteurs"
 
-version = "1.15.1~ynh1"
+version = "1.15.3~ynh1"
 
 maintainers = ["orhtej2"]
 
@@ -44,8 +44,8 @@ ram.runtime = "50M"
     [resources.sources]
 
         [resources.sources.main]
-        url = "https://code.castopod.org/-/project/2/uploads/87089055dc11858da97c368f75163556/castopod-1.15.1.zip"
-        sha256 = "747e7a3086f847bde00f2115c4d187845a0af9f43f032f43a3cc2f97bf52e17e"
+        url = "https://code.castopod.org/-/project/2/uploads/e45100769a6def361352d9d9f8c2de84/castopod-1.15.3.zip"
+        sha256 = "013b9054df4659a1aa64df85bde02a558bbc577fad4cdd8aea3b49ced24cb928"
         autoupdate.strategy = "latest_gitlab_release"
         autoupdate.asset = "Castopod Package \\(zip\\)"
         in_subdir = true
@@ -69,7 +69,7 @@ ram.runtime = "50M"
     api.allowed = "visitors"
 
     [resources.apt]
-    packages = "mariadb-server, mariadb-client, ffmpeg, php8.2-mysql, php8.2-gd, php8.2-intl, php8.2-curl, php8.2-mbstring, php8.2-xml, php8.2-mysqlnd, redis-server"
+    packages = "mariadb-server, mariadb-client, ffmpeg, php8.4-mysql, php8.4-gd, php8.4-intl, php8.4-curl, php8.4-mbstring, php8.4-xml, php8.4-mysqlnd, redis-server"
 
     [resources.database]
     type = "mysql"
