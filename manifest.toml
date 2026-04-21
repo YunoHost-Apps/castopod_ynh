@@ -69,7 +69,19 @@ ram.runtime = "50M"
     api.allowed = "visitors"
 
     [resources.apt]
-    packages = "mariadb-server, mariadb-client, ffmpeg, php8.4-mysql, php8.4-gd, php8.4-intl, php8.4-curl, php8.4-mbstring, php8.4-xml, php8.4-mysqlnd, redis-server"
+    packages = [
+        "mariadb-server",
+        "mariadb-client",
+        "ffmpeg",
+        "php8.5-mysql",
+        "php8.5-gd",
+        "php8.5-intl",
+        "php8.5-curl",
+        "php8.5-mbstring",
+        "php8.5-xml",
+        "php8.5-mysqlnd",
+        "redis-server"
+    ]
 
     [resources.database]
     type = "mysql"
