@@ -7,7 +7,7 @@ name = "Castopod"
 description.en = "Hosting platform made for podcasters"
 description.fr = "Plateforme d'hébergement conçue pour les podcasteurs"
 
-version = "1.15.6~ynh1"
+version = "1.15.7~ynh1"
 
 maintainers = ["orhtej2"]
 
@@ -44,8 +44,8 @@ ram.runtime = "50M"
     [resources.sources]
 
         [resources.sources.main]
-        url = "https://code.castopod.org/-/project/2/uploads/515d0009cca4298a32558988aa970c1d/castopod-1.15.6.zip"
-        sha256 = "8a364dde27ee99e8238aea288ed086b1819a713415ee7d3bcedd3bc6523e0f0c"
+        url = "https://code.castopod.org/-/project/2/uploads/0bd1aecdbc9c91e65a548ed2506bbaad/castopod-1.15.7.zip"
+        sha256 = "108a176fd9f4e5bf823dfe19c59f8372e5f7fcbb6d9aa2681e7a43e8d66ee505"
         autoupdate.strategy = "latest_gitlab_release"
         autoupdate.asset = "Castopod Package \\(zip\\)"
         in_subdir = true
